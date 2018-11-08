@@ -33,7 +33,6 @@ public abstract class EnemyFighter extends Enemy{
         c.destroySelf();
         Map.getInstance().destroy(this);
         sprite = new ImageIcon();
-
     }
 
 
