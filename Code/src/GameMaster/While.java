@@ -1,11 +1,11 @@
 package GameMaster;
 
-import GUI.IUpdatable;
+import GUI.Iwachinable;
 import Map.Map;
 
 import java.util.concurrent.Callable;
 
-public class While implements IUpdatable
+public class While implements Iwachinable
 {
     private Callable<Boolean> Condition;
     private Runnable Action;

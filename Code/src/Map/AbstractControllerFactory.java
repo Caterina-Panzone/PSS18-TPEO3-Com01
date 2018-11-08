@@ -1,9 +1,9 @@
 package Map;
 
 import Controllers.EnemyMovementController;
-import GameObjects.GameObject;
+import GameObjects.LittlePonny;
 
 public abstract class AbstractControllerFactory {
 
-    public abstract EnemyMovementController createController(GameObject pos);
+    public abstract EnemyMovementController createController(LittlePonny pos);
 }

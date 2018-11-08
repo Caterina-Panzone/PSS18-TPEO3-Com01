@@ -1,11 +1,11 @@
 package Map;
 
 import Assets.Configs;
-import GameObjects.GameObject;
+import GameObjects.LittlePonny;
 import GameObjects.MovingObject;
 import GameObjects.Vector2;
 
-public class OffsetPosition extends GameObject {
+public class OffsetPosition extends LittlePonny {
     Vector2 offset;
     MovingObject followed;
 

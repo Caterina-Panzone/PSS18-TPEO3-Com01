@@ -1,6 +1,5 @@
 package Controllers;
 
-import GUI.IUpdatable;
 import GUI.MyListener;
 import GameObjects.EnemyFighter;
 import GameObjects.Player;

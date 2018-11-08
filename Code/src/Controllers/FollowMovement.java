@@ -2,7 +2,7 @@ package Controllers;
 
 
 import Assets.Configs;
-import GameObjects.GameObject;
+import GameObjects.LittlePonny;
 import GameObjects.Vector2;
 
 import static java.lang.Math.abs;
@@ -10,7 +10,7 @@ import static java.lang.Math.min;
 
 public class FollowMovement extends MovementPattern {
     protected Vector2 o, d;
-    protected GameObject so, sd;
+    protected LittlePonny so, sd;
     float distX = Configs.getConfigs().getFieldWidth();
     float distY = Configs.getConfigs().getFieldHeigth();
     float x1;
@@ -19,7 +19,7 @@ public class FollowMovement extends MovementPattern {
     float y2;
 
 
-    public FollowMovement(GameObject or, GameObject de) {
+    public FollowMovement(LittlePonny or, LittlePonny de) {
         so = or;
         sd = de;
     }

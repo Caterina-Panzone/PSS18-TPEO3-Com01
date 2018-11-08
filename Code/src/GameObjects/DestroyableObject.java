@@ -4,7 +4,7 @@ import Collisions.Collider;
 
 import javax.swing.*;
 
-public abstract class DestroyableObject extends GameObject{
+public abstract class DestroyableObject extends LittlePonny {
 	protected int health;
 	protected Collider c;
 	protected Icon sprite;

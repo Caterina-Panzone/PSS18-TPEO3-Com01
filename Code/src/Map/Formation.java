@@ -43,7 +43,9 @@ public class Formation extends Enemy {
 
    }
 
+    public void createEnemiesAlternativo(){
 
+    }
 
     public void createEnemies() {
         int x = 0;
@@ -57,8 +59,8 @@ public class Formation extends Enemy {
                 c = f.createController(p);
                 enemies.add(c);
                 contToPositionMap.put(c, p);
-                x++;
                 f = factories.get(x);
+                x++;
 
             }
         }
@@ -114,17 +116,19 @@ public class Formation extends Enemy {
         factories.add(new KamikazeControllerFactory());
         factories.add(new KamikazeControllerFactory());
         factories.add(new KamikazeControllerFactory());
+
         factories.add(new FighterControllerFactory());
         factories.add(new FighterControllerFactory());
         factories.add(new FighterControllerFactory());
         factories.add(new FighterControllerFactory());
         factories.add(new FighterControllerFactory());
+
         factories.add(new HybridControllerFactory());
         factories.add(new HybridControllerFactory());
         factories.add(new HybridControllerFactory());
         factories.add(new HybridControllerFactory());
         factories.add(new HybridControllerFactory());
-        factories.add(new HybridControllerFactory());
+
         //TODO:Revisar porque falla con 15 elementos
     }
 

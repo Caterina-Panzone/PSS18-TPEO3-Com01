@@ -2,14 +2,11 @@ package Map;
 
 import javax.swing.*;
 
-import GUI.IUpdatable;
+import GUI.Iwachinable;
 import GUI.Window;
-import GameMaster.DoInFrames;
-import GameMaster.DoWhen;
 import GameObjects.DestroyableObject;
-import GameObjects.GameObject;
 
-public class GraphicObject implements IUpdatable {
+public class GraphicObject implements Iwachinable {
 	protected DestroyableObject object;
 	protected JLabel model;
 	

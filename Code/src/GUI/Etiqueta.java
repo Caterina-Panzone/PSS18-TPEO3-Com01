@@ -32,6 +32,7 @@ public class Etiqueta {
     public int getContador(){
         return contador;
     }
+
     public void setContador(int n){
         contador = n;
     }

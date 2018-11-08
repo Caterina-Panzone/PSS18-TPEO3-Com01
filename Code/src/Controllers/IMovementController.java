@@ -1,7 +1,5 @@
 package Controllers;
 
-import GUI.IUpdatable;
-import GameObjects.Enemy;
 import GameObjects.Vector2;
 import Map.Map;
 

@@ -12,5 +12,5 @@ public abstract class MovementPattern {
     public abstract float getY();
 
 
-    protected void updateT(){t = System.currentTimeMillis()/1000;}
+    protected void updateT(){t = System.nanoTime()/1_000_000_000f;}
 }

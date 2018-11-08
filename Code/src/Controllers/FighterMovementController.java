@@ -1,14 +1,11 @@
 package Controllers;
 
-import GameObjects.Enemy;
 import GameObjects.EnemyFighterOnlyShoot;
-import GameObjects.GameObject;
-import GameObjects.MovingObject;
-import Map.Map;
+import GameObjects.LittlePonny;
 
 public class FighterMovementController<E extends EnemyFighterOnlyShoot> extends EnemyMovementController<E> {
 
-    public FighterMovementController(GameObject pos) {
+    public FighterMovementController(LittlePonny pos) {
         super();
         controlled = (E) new EnemyFighterOnlyShoot();
         b = new FollowBehaviour(controlled, pos);

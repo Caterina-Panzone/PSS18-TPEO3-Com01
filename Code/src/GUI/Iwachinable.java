@@ -4,7 +4,7 @@ import Map.GraphicObject;
 import Map.Map;
 import Map.SuperMap;
 
-public interface IUpdatable
+public interface Iwachinable
 {
     void update(Map map);
 
