@@ -118,8 +118,12 @@ public class Formation extends Enemy {
 
     private void createFactories() {
         factories = new LinkedList<AbstractControllerFactory>();
+        //Hace una funcion a la que le pases una lista de abstractcontrollerfactory y te retorne un elemento random
 
-        factories.add(new KamikazeControllerFactory());
+        for(int i = 0; i<15; i++){
+            factories.add(addEnemies());
+        }
+        /*factories.add(new KamikazeControllerFactory());
         factories.add(new KamikazeControllerFactory());
         factories.add(new KamikazeControllerFactory());
         factories.add(new KamikazeControllerFactory());
@@ -136,7 +140,7 @@ public class Formation extends Enemy {
         factories.add(new HybridControllerFactory());
         factories.add(new HybridControllerFactory());
         factories.add(new HybridControllerFactory());
-        factories.add(new HybridControllerFactory());
+        factories.add(new HybridControllerFactory());*/
 
 
         //TODO:Revisar porque falla con 15 elementos
@@ -150,7 +154,20 @@ public class Formation extends Enemy {
         System.out.println("se fue");
         //Map.getInstance().remove(this);
         Map.getInstance().newLevel();
+    }
 
+    private AbstractControllerFactory addEnemies(){
+       LinkedList<AbstractControllerFactory> lista = new LinkedList<AbstractControllerFactory>();
+       lista.add(new FighterControllerFactory());
+       lista.add(new FollowerControllerFactory());
+       lista.add(new HybridControllerFactory());
+       lista.add(new HybridFollowerControllerFactory());
+       lista.add(new KamikazeControllerFactory());
+
+       Random rand = new Random();
+       int i = rand.nextInt(lista.size());
+       AbstractControllerFactory toRet  = lista.get(i);
+       return toRet;
 
     }
 }
