@@ -34,9 +34,7 @@ public class Menu {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.setLayout(null);
-        //frame.setBounds(0,0, Configs.getConfigs().getCanvasWidth(),Configs.getConfigs().getCanvasHeight());
         c.setLayout(null);
-        //frame.setLocationRelativeTo(null);
 
 
 
@@ -46,8 +44,6 @@ public class Menu {
 
         frame.setSize(Configs.getConfigs().getWindowsSize());
         frame.setResizable(false);
-        frame.setUndecorated(true);
-        frame.pack();
 
 
 
