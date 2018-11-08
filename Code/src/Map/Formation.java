@@ -11,9 +11,10 @@ import java.util.*;
 
 public class Formation extends Enemy {
 
-    protected LinkedList<EnemyMovementController> enemies;
+    protected List<EnemyMovementController> enemies;
     protected int lvl;
     protected java.util.Map<EnemyMovementController, OffsetPosition> contToPositionMap;
+    protected List<AbstractControllerFactory> factories;
     Vector2 offset;
     int distX, distY;
 
@@ -22,43 +23,44 @@ public class Formation extends Enemy {
    public Formation(int d){
        health = 1;
        speed = 0.19f;
-       ubication = new Vector2(300, 100);
+       ubication = new Vector2(00, 00);
        dir = Vector2.ORIGIN();
        new FormationMovementController(this);
        enemies = new LinkedList<>();
        lvl = d;
        sprite = SpriteDepot.FROZE;
        c = new DummyCollider(this);
-       offset = new Vector2(-20, 0);
-       distX = 180;
+       offset = new Vector2(0, 0);
+       distX = 200;
        distY = 100;
+       createFactories();
        Map.getInstance().add(this);
        contToPositionMap = new HashMap<EnemyMovementController, OffsetPosition>();
 
 
    }
 
-    public void createEnemiesAlternativo(){
-
-    }
 
     public void createEnemies() {
         int x = 0;
         EnemyMovementController c;
         OffsetPosition p;
-        AbstractControllerFactory f = addEnemies();
+        AbstractControllerFactory f = factories.get(x);
         for (int i = 0; i < 3;i++){
             for(int j = 0;j<5;j++){
                 offset = new Vector2(j*distX, i*distY);
+                System.out.println(offset.getX() +" "+ offset.getY() + "Vector"+i+" "+j);
                 p = new OffsetPosition(this, offset);
+
                 c = f.createController(p);
                 enemies.add(c);
                 contToPositionMap.put(c, p);
-                f = addEnemies();
+                f = factories.get(x);
                 x++;
 
             }
         }
+        System.out.println(enemies.size());
     }
 
 
@@ -111,6 +113,27 @@ public class Formation extends Enemy {
 
     }
 
+
+    private void createFactories() {
+        factories = new LinkedList<AbstractControllerFactory>();
+        factories.add(new KamikazeControllerFactory());
+        factories.add(new KamikazeControllerFactory());
+        factories.add(new KamikazeControllerFactory());
+        factories.add(new KamikazeControllerFactory());
+        factories.add(new KamikazeControllerFactory());
+        factories.add(new FighterControllerFactory());
+        factories.add(new FighterControllerFactory());
+        factories.add(new FighterControllerFactory());
+        factories.add(new FighterControllerFactory());
+        factories.add(new FighterControllerFactory());
+        factories.add(new HybridControllerFactory());
+        factories.add(new HybridControllerFactory());
+        factories.add(new HybridControllerFactory());
+        factories.add(new HybridControllerFactory());
+        factories.add(new HybridControllerFactory());
+        factories.add(new HybridControllerFactory());
+        //TODO:Revisar porque falla con 15 elementos
+    }
 
     public void removeCont(EnemyMovementController e) {
        enemies.remove(e);

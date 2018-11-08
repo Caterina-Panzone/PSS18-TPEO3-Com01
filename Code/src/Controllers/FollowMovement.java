@@ -35,7 +35,6 @@ public class FollowMovement extends MovementPattern {
 
 
         if(abs(di) <= abs(dd)) {
-            System.out.println("va al borde");
             return di;
         }
         else
