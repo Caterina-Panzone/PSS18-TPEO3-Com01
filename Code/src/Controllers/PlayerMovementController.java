@@ -63,7 +63,7 @@ public class PlayerMovementController extends MovementController {
 
 	protected Vector2 armarVector()
 	{
-		MyListener input = MyListener.Instance();
+		MyListener input = MyListener.getInstance();
 
 		Vector2 vec = Vector2.ORIGIN();
 

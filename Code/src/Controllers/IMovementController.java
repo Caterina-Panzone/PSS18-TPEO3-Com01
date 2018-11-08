@@ -1,6 +1,7 @@
 package Controllers;
 
 import GUI.IUpdatable;
+import GameObjects.Enemy;
 import GameObjects.Vector2;
 import Map.Map;
 
@@ -29,7 +30,5 @@ public abstract class IMovementController implements IController {
         map.destroy(this);
     }
 
-    public void setBehaviour(Behaviour be){
-        b = be;
-    }
+
 }

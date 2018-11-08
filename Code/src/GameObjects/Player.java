@@ -40,10 +40,9 @@ public class Player extends Ship{
 		sprite = SpriteDepot.NAVE;
 		attackSpeed = playerAttackSpeed;
 		loaded = true;
-		isFiring = false;
 		c = new PlayerCollider(this);
 		shield = new Shield(0);
-		weapon = new PlayerWeapon(damage);
+		weapon = new BasicWeapon(damage);
 	}
 
 
@@ -53,7 +52,6 @@ public class Player extends Ship{
 	public void update(Map map) {
 
 		if (health > 0) {
-			checkFire(map);
 			updatePosition(map);
 			super.update(map);
 		} else {
@@ -66,14 +64,13 @@ public class Player extends Ship{
 
 	}
 
-	private void checkFire(Map map) {
+	public void fire() {
 
 		if (time < System.currentTimeMillis())
 			loaded = true;
-		if (loaded && isFiring) {
+		if (loaded) {
 			loaded = false;
 			time = System.currentTimeMillis() + attackSpeed;
-
 			weapon.shoot();
 
 		}
