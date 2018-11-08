@@ -8,20 +8,19 @@ import Controllers.*;
 import GameObjects.*;
 import PowerUps.AbstractPowerUpFactory;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Formation extends Enemy {
 
-    protected Collection<EnemyMovementController> enemies;
+    protected LinkedList<EnemyMovementController> enemies;
     protected AbstractPowerUpFactory puf;
     protected int lvl;
     protected java.util.Map<EnemyMovementController, OffsetPosition> contToPositionMap;
     protected List<AbstractControllerFactory> factories;
     Vector2 offset;
     int distX, distY;
+
+    private int cont = 0; //Contador para que los enemigos no se activen en el primer update
 
    public Formation(int d){
        health = 1;
@@ -77,7 +76,15 @@ public class Formation extends Enemy {
 
    public void update(Map map){
 
+
        if(enemies.size() != 0) {
+           cont ++;
+           Random rand = new Random();
+           float aux = rand.nextFloat(); //CADA CIERTO TIEMPO MANDA A ACTIVAR UN CONTROLADOR
+           int aux2 = rand.nextInt(enemies.size());
+           if (aux<0.01 && cont > 250){
+               enemies.get(aux2).activate();
+           }
            updatePosition(map);
            super.update(map);
        }
@@ -111,13 +118,15 @@ public class Formation extends Enemy {
 
     private void createFactories() {
         factories = new LinkedList<AbstractControllerFactory>();
+
         factories.add(new KamikazeControllerFactory());
         factories.add(new KamikazeControllerFactory());
         factories.add(new KamikazeControllerFactory());
         factories.add(new KamikazeControllerFactory());
         factories.add(new KamikazeControllerFactory());
 
-        factories.add(new FighterControllerFactory());
+        factories.add(new FollowerControllerFactory());
+
         factories.add(new FighterControllerFactory());
         factories.add(new FighterControllerFactory());
         factories.add(new FighterControllerFactory());
@@ -128,6 +137,7 @@ public class Formation extends Enemy {
         factories.add(new HybridControllerFactory());
         factories.add(new HybridControllerFactory());
         factories.add(new HybridControllerFactory());
+
 
         //TODO:Revisar porque falla con 15 elementos
     }

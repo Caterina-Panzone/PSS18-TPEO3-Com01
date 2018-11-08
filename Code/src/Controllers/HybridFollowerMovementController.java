@@ -27,7 +27,7 @@ public class HybridFollowerMovementController<E extends HybridFollowerEnemy> ext
     @Override
     public void update(Map map)
     {
-        if((controlled.getHealth()/2)<=health){
+        if(controlled.getHealth()<=health/2){
             b = new DizzyBehaviour();
         }
         super.update(map);
