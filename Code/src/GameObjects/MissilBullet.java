@@ -2,6 +2,7 @@ package GameObjects;
 
 import Assets.SpriteDepot;
 import Collisions.PlayerBulletCollider;
+import Map.Map;
 
 public class MissilBullet extends PlayerBullet {
     public MissilBullet(float d, Vector2 ubication) {
@@ -12,5 +13,6 @@ public class MissilBullet extends PlayerBullet {
         sprite = SpriteDepot.LASER;
         health = 1;
         c = new PlayerBulletCollider(this);
+        Map.getInstance().add(this);
     }
 }

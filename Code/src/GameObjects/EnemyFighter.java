@@ -11,7 +11,7 @@ import PowerUps.PierceBulletPU;
 
 import javax.swing.*;
 
-public abstract class EnemyFighter extends Enemy {
+public abstract class EnemyFighter extends Enemy{
 
 
 
@@ -20,7 +20,6 @@ public abstract class EnemyFighter extends Enemy {
     protected boolean loaded;
     protected long time;
     protected int gunPosition;
-    protected static Vector2 initialPosition = new Vector2(400,00);
     protected static int fighterAttackSpeed = 300;
     protected float gunPhaseShift;
     protected FighterFireController f;
@@ -40,18 +39,15 @@ public abstract class EnemyFighter extends Enemy {
 
 
 
-    protected void checkFire(Map map) {
+    public void fire() {
 
         if (time < System.currentTimeMillis())
             loaded = true;
-        if (loaded && isFiring){
+        if (loaded){
             loaded = false;
             time = System.currentTimeMillis() + attackSpeed;
-
-
             Vector2 ubBullet = getUbication().sum(Vector2.RIGHT(gunPosition+gunPhaseShift));
-            Bullet b = new EnemyFighterBullet(damage,ubBullet);
-            map.add(b);
+            new EnemyFighterBullet(damage,ubBullet);
             gunPhaseShift *= -1;
 
         }

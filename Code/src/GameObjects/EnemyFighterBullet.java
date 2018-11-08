@@ -2,6 +2,7 @@ package GameObjects;
 
 import Assets.SpriteDepot;
 import Collisions.EnemyBulletCollider;
+import Map.Map;
 
 import javax.swing.*;
 
@@ -16,6 +17,7 @@ public class EnemyFighterBullet extends EnemyBullet {
         speed = 18.5f;
         sprite = SpriteDepot.ENEMYBULLET1;
         c = new EnemyBulletCollider(this);
+        Map.getInstance().add(this);
     }
 
     @Override

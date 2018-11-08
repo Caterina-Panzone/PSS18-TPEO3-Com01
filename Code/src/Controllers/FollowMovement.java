@@ -11,7 +11,7 @@ import static java.lang.Math.min;
 public class FollowMovement extends MovementPattern {
     protected Vector2 o, d;
     protected GameObject so, sd;
-    float distX = Configs.getConfigs().getCanvasWidth();
+    float distX = Configs.getConfigs().getFieldWidth();
     float distY = Configs.getConfigs().getFieldHeigth();
     float x1;
     float x2;
@@ -28,8 +28,19 @@ public class FollowMovement extends MovementPattern {
         updateP();
         x2 = d.getX();
         x1 = o.getX();
+        float dd = x2-x1;
+        float di = (distX - x2) + x1;
 
-        return min(abs(x2-x1), abs(distX - x2 + x1)) ;
+
+
+        if(abs(di) <= abs(dd)) {
+            System.out.println("va al borde");
+            return di;
+        }
+        else
+            return dd;
+        //Calcula si es mas facil ir por izquierda o derecha (atravesando el borde del mapa)
+        //NO funciona
     }
 
     private void updateP() {

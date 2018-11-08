@@ -1,14 +1,14 @@
 package PowerUps;
 
 import GameObjects.Player;
-import GameObjects.PlayerWeapon;
+import GameObjects.BasicWeapon;
 import GameObjects.Weapon;
 
 public class PiercingReverter implements Runnable {
     @Override
     public void run() {
         System.out.println("desactivo");
-        Weapon w = new PlayerWeapon(Player.getInstance().getDamage());
+        Weapon w = new BasicWeapon(Player.getInstance().getDamage());
         Player.getInstance().setWeapon(w);
 
 

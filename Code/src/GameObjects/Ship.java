@@ -9,15 +9,6 @@ public abstract class Ship extends MovingObject {
 
 
 
-    public void fire() {
-        isFiring = true;
-
-    }
-
-    public void stopFiring() {
-        isFiring = false;
-    }
-
 
 
 

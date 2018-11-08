@@ -7,7 +7,6 @@ import GUI.MyListener;
 import GUI.Window;
 import GameObjects.*;
 import Map.Map;
-import PowerUps.FrozePU;
 
 import java.util.Random;
 
@@ -19,7 +18,7 @@ public class Level extends Thread{
 
 	public Level() {
 
-		MyListener l = MyListener.Instance();
+		MyListener l = MyListener.getInstance();
 		Window.GetWindow().addListener(l);
 		map = Map.newInstance(Window.GetWindow());
 		map.add(Player.getInstance());
@@ -30,7 +29,6 @@ public class Level extends Thread{
 		int xBarricade = rand.nextInt(Configs.getConfigs().getCanvasWidth()-400) + 200;
 		new EnemyBarricade(xBarricade,yBarricade);
 		map.newLevel();
-		map.add(new FrozePU(new Vector2(0,0)));
 
 
 

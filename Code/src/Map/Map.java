@@ -38,7 +38,7 @@ public final class Map extends SuperMap{
 
 	public static Map getInstance() {
 		if (instance == null)
-			throw new MapException("incicializa el mapa pete");
+			throw new MapException("incicializa el mapa");
 		return instance;
 	}
 
@@ -47,8 +47,8 @@ public final class Map extends SuperMap{
 		list = new LinkedList<>();
 		lvl = 0;
 		wind = w;
-		toDestroy = new LinkedBlockingQueue<>(50);
-		toAdd = new LinkedBlockingQueue<>(50);
+		toDestroy = new LinkedBlockingQueue<>(500);
+		toAdd = new LinkedBlockingQueue<>(500);
 
 	}
 
@@ -119,12 +119,15 @@ public final class Map extends SuperMap{
 	}
 
 	public void newLevel(){
+		if(form != null)remove(form);
 		form = new Formation(++lvl);
 		form.createEnemies();
 	}
 
 
-
+	public int getLevel() {
+		return lvl;
+	}
 }
 
 

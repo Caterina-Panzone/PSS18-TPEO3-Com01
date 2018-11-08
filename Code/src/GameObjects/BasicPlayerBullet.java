@@ -2,6 +2,7 @@ package GameObjects;
 
 import Assets.SpriteDepot;
 import Collisions.PlayerBulletCollider;
+import Map.Map;
 
 import javax.swing.*;
 
@@ -14,6 +15,7 @@ public class BasicPlayerBullet extends PlayerBullet {
 		sprite = SpriteDepot.LASER;
 		health = 1;
 		c = new PlayerBulletCollider(this);
+		Map.getInstance().add(this);
 	}
 
 }
