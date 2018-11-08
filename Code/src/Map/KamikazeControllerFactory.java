@@ -1,7 +1,7 @@
 package Map;
 
 import Controllers.EnemyMovementController;
-import Controllers.KamikazeMovementController;
+import Controllers.KamikazeMovementEnemyMovementController;
 import GameObjects.GameObject;
 
 public class KamikazeControllerFactory extends AbstractControllerFactory {
@@ -10,6 +10,6 @@ public class KamikazeControllerFactory extends AbstractControllerFactory {
 
     @Override
     public EnemyMovementController createController(GameObject pos) {
-        return new KamikazeMovementController(pos);
+        return new KamikazeMovementEnemyMovementController(pos);
     }
 }

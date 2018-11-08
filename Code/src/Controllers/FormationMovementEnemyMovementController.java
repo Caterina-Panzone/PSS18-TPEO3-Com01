@@ -2,8 +2,8 @@ package Controllers;
 
 import Map.Formation;
 
-public class FormationMovementController extends EnemyMovementController{
-    public FormationMovementController(Formation f) {
+public class FormationMovementEnemyMovementController extends EnemyMovementController {
+    public FormationMovementEnemyMovementController(Formation f) {
         controlled = f;
         b = new FormationBehaviour();
     }

@@ -1,27 +1,13 @@
 package Collisions;
 
-public class EnemyBulletVisitor implements Visitor {
+public class EnemyBulletVisitor extends Visitor {
     float d;
 
     public EnemyBulletVisitor(float dmg){
         d = dmg;
     }
 
-    @Override
-    public void visitEnemy(EnemyCollider e) {
 
-        //System.out.println("choco");
-    }
-
-    @Override
-    public void visitPlayerBullet(PlayerBulletCollider b) {
-
-    }
-
-    @Override
-    public void visitEnemyBullet(EnemyBulletCollider b) {
-
-    }
 
 
 
@@ -47,11 +33,8 @@ public class EnemyBulletVisitor implements Visitor {
 
     @Override
     public void visitKamikazeShield(KamikazeShieldCollider b) {
-
+        b.getO().damage(d);
     }
 
-    @Override
-    public void visitPiercingBullet(PiercingBulletCollider b) {
 
-    }
 }

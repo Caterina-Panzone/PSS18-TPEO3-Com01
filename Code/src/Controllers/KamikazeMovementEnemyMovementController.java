@@ -3,9 +3,9 @@ package Controllers;
 import GameObjects.GameObject;
 import GameObjects.KamikazeEnemy;
 
-public class KamikazeMovementController<E extends KamikazeEnemy> extends EnemyMovementController<E> {
+public class KamikazeMovementEnemyMovementController<E extends KamikazeEnemy> extends EnemyMovementController<E> {
 
-    public KamikazeMovementController(GameObject pos) {
+    public KamikazeMovementEnemyMovementController(GameObject pos) {
         super();
         controlled = (E) new KamikazeEnemy();
         b = new FollowBehaviour(controlled,pos);

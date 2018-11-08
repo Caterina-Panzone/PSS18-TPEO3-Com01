@@ -21,4 +21,7 @@ public class SpriteDepot {
     public static Icon PEARCE = new ImageIcon(Paths.PEARCE);
     public static Icon SHIELD = new ImageIcon(Paths.SHIELD);
     public static Icon DUMMY = new ImageIcon(Paths.DUMMY);
+   // public static Icon KAMIKAZE1 = new ImageIcon(Paths.KAMIKAZE1);
+   // public static Icon KAMIKAZEHYBRID = new ImageIcon(Paths.KAMIKAZEHYBRID);
+    //public static Icon SHOOTERHYBRID = new ImageIcon(Paths.SHOOTERHYBRID);
 }

@@ -29,13 +29,11 @@ public class FollowMovement extends MovementPattern {
         x2 = d.getX();
         x1 = o.getX();
         float dd = x2-x1;
-        //float di = (distX - x2) + x1;
         float di = (distX - abs(dd));
 
 
 
         if(abs(di) <= abs(dd)) {
-            System.out.println("va al borde");
             return di;
         }
         else

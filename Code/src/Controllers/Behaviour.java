@@ -6,19 +6,28 @@ public abstract class Behaviour {
 
     protected Vector2 direc;
     protected MovementPattern m;
+    protected boolean isPaused;
 
     public abstract Vector2 getDir();
 
     protected void updateDir(){
 
+        if(!isPaused) {
+            float x = m.getX();
 
-        float x = m.getX();
 
+            float y = m.getY();
 
-        float y =  m.getY();
-
-        Vector2 vec = new Vector2(x,y);
-        direc = vec;//.norma();
+            Vector2 vec = new Vector2(x, y);
+            direc = vec;
+        }
     }
 
+    public void pause() {
+        isPaused = true;
+    }
+
+    public void unpause(){
+        isPaused = false;
+    }
 }

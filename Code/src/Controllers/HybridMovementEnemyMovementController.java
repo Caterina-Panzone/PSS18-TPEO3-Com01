@@ -1,16 +1,13 @@
 package Controllers;
 
 import GameObjects.EnemyFighterHybrid;
-import GameObjects.EnemyFighterOnlyShoot;
-import GameObjects.MovingObject;
-import GameObjects.Player;
 import Map.Map;
 
-public class HybridMovementController<E extends EnemyFighterHybrid> extends EnemyMovementController<E>{
+public class HybridMovementEnemyMovementController<E extends EnemyFighterHybrid> extends EnemyMovementController<E> {
 
     private int health;
 
-    public HybridMovementController() {
+    public HybridMovementEnemyMovementController() {
         super();
         controlled = (E) new EnemyFighterHybrid();
         health = controlled.getHealth();

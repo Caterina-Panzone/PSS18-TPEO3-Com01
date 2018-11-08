@@ -4,9 +4,9 @@ import GameObjects.FollowerEnemy;
 import GameObjects.GameObject;
 import GameObjects.Player;
 
-public class FollowerMovementController<E extends FollowerEnemy> extends EnemyMovementController<E> {
+public class FollowerMovementEnemyMovementController<E extends FollowerEnemy> extends EnemyMovementController<E> {
 
-    public FollowerMovementController(GameObject pos) {
+    public FollowerMovementEnemyMovementController(GameObject pos) {
         super();
         controlled = (E) new FollowerEnemy();
         b = new FollowBehaviour(controlled, pos);

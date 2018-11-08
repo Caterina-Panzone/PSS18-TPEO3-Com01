@@ -18,4 +18,9 @@ public class BasicPlayerBullet extends PlayerBullet {
 		Map.getInstance().add(this);
 	}
 
+	@Override
+	public void update(Map map) {
+		super.update(map);
+		updatePosition(map);
+	}
 }

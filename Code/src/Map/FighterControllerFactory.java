@@ -1,7 +1,7 @@
 package Map;
 
 import Controllers.EnemyMovementController;
-import Controllers.FighterMovementController;
+import Controllers.FighterMovementEnemyMovementController;
 import GameObjects.GameObject;
 
 public class FighterControllerFactory extends AbstractControllerFactory {
@@ -10,6 +10,6 @@ public class FighterControllerFactory extends AbstractControllerFactory {
 
     @Override
     public EnemyMovementController createController(GameObject pos) {
-        return new FighterMovementController(pos);
+        return new FighterMovementEnemyMovementController(pos);
     }
 }

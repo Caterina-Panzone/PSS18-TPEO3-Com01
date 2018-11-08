@@ -119,7 +119,6 @@ public final class Map extends SuperMap{
 	}
 
 	public void newLevel(){
-		if(form != null)remove(form);
 		form = new Formation(++lvl);
 		form.createEnemies();
 	}

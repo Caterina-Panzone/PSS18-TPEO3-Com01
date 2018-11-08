@@ -18,4 +18,9 @@ public class PiercingBullet extends PlayerBullet {
         c = new PiercingBulletCollider(this);
         Map.getInstance().add(this);
     }
+
+    public void update(Map map) {
+        super.update(map);
+        updatePosition(map);
+    }
 }

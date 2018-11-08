@@ -5,11 +5,11 @@ import GameObjects.HybridFollowerEnemy;
 import GameObjects.Player;
 import Map.Map;
 
-public class HybridFollowerMovementController<E extends HybridFollowerEnemy> extends EnemyMovementController<E> {
+public class HybridFollowerMovementEnemyMovementController<E extends HybridFollowerEnemy> extends EnemyMovementController<E> {
 
     private int health;
 
-    public HybridFollowerMovementController(GameObject pos) {
+    public HybridFollowerMovementEnemyMovementController(GameObject pos) {
         super();
         controlled = (E) new HybridFollowerEnemy();
         health = controlled.getHealth();

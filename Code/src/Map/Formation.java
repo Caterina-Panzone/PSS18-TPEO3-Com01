@@ -6,7 +6,6 @@ import Collisions.DummyCollider;
 import Collisions.Visitor;
 import Controllers.*;
 import GameObjects.*;
-import PowerUps.AbstractPU;
 import PowerUps.AbstractPowerUpFactory;
 import PowerUps.PowerUpFactory;
 
@@ -28,7 +27,7 @@ public class Formation extends Enemy {
        speed = 0.19f;
        ubication = new Vector2(300, 100);
        dir = Vector2.ORIGIN();
-       new FormationMovementController(this);
+       new FormationMovementEnemyMovementController(this);
        enemies = new LinkedList<>();
        lvl = d;
        sprite = SpriteDepot.FROZE;
@@ -38,14 +37,12 @@ public class Formation extends Enemy {
        distY = 100;
        Map.getInstance().add(this);
        contToPositionMap = new HashMap<EnemyMovementController, OffsetPosition>();
-       puf = new PowerUpFactory(1);
+       //puf = new PowerUpFactory(1);
 
 
    }
 
-    public void createEnemiesAlternativo(){
 
-    }
 
     public void createEnemies() {
         int x = 0;
@@ -122,8 +119,7 @@ public class Formation extends Enemy {
     }
 
     public void destroySelf() {
-        System.out.println("se fue");
-        //Map.getInstance().remove(this);
+        Map.getInstance().remove(this);
         Map.getInstance().newLevel();
     }
 

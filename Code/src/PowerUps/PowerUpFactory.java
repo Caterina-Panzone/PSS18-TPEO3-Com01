@@ -10,21 +10,21 @@ public class PowerUpFactory extends AbstractPowerUpFactory{
 
     @Override
     AbstractPU newFroze() {
-        return new FrozePU();
+        return new FrozePU(null);
     }
 
     @Override
     AbstractPU newShield() {
-        return new ShieldPU();
+        return new ShieldPU(null);
     }
 
     @Override
     AbstractPU newKamikazeShield() {
-        return new KamikazeShieldPU();
+        return new KamikazeShieldPU(null);
     }
 
     @Override
     AbstractPU newPiercing() {
-        return new PierceBulletPU();
+        return new PierceBulletPU(null);
     }
 }

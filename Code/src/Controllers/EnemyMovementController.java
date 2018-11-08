@@ -1,19 +1,15 @@
 package Controllers;
 
-import Assets.Paths;
+import Collisions.PowerUpVisitor;
 import GameObjects.Enemy;
 import Map.Map;
 
-import javax.swing.*;
-
-import GameObjects.MovingObject;
-public abstract class EnemyMovementController<E extends Enemy> extends MovementController<E> {
+public abstract class EnemyMovementController<E extends Enemy> extends MovementController<E> implements VisitableEnemyController {
 
 
 
 
     public EnemyMovementController(){
-
         Map.getInstance().add(this);
     }
 
@@ -46,4 +42,18 @@ public abstract class EnemyMovementController<E extends Enemy> extends MovementC
     public abstract void activate();
 
     public abstract void setBehaviour(Behaviour be);
+
+    public void accept(PowerUpVisitor v){
+        v.visitEnemyController();
+    }
+
+    public void Freeze() {
+        b.pause();
+    }
+
+    public void Unfreeze(){
+        b.unpause();
+    }
+
+
 }

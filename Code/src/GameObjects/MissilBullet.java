@@ -15,4 +15,9 @@ public class MissilBullet extends PlayerBullet {
         c = new PlayerBulletCollider(this);
         Map.getInstance().add(this);
     }
+
+    public void update(Map map) {
+        super.update(map);
+        updatePosition(map);
+    }
 }

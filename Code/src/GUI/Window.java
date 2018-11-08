@@ -69,6 +69,7 @@ public class Window {
 
 
 
+
     public void addListener(KeyListener k) { Menu.getInstance().getFrame().addKeyListener(k); }
 
 

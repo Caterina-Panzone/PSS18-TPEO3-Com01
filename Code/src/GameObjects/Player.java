@@ -4,6 +4,7 @@ import Assets.Configs;
 import Assets.SpriteDepot;
 import Collisions.Collider;
 import Collisions.PlayerCollider;
+import Controllers.PlayerFireController;
 import GUI.Menu;
 import Map.*;
 

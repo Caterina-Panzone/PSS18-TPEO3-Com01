@@ -1,7 +1,7 @@
 package Map;
 
 import Controllers.EnemyMovementController;
-import Controllers.HybridMovementController;
+import Controllers.HybridMovementEnemyMovementController;
 import GameObjects.GameObject;
 
 public class HybridControllerFactory extends AbstractControllerFactory {
@@ -10,6 +10,6 @@ public class HybridControllerFactory extends AbstractControllerFactory {
 
     @Override
     public EnemyMovementController createController(GameObject pos) {
-        return new HybridMovementController();
+        return new HybridMovementEnemyMovementController();
     }
 }

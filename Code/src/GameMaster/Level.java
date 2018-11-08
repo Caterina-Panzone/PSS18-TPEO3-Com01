@@ -22,7 +22,7 @@ public class Level extends Thread{
 		Window.GetWindow().addListener(l);
 		map = Map.newInstance(Window.GetWindow());
 		map.add(Player.getInstance());
-
+		new PlayerFireController();
 		PlayerMovementController c = new PlayerMovementController(Player.getInstance());
 		Random rand = new Random();
 		int yBarricade = (int) Configs.getConfigs().getCanvasHeight()/2;

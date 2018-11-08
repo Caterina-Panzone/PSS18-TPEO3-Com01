@@ -5,17 +5,14 @@ import GameObjects.Enemy;
 import GameObjects.Player;
 import Map.Map;
 
-public class EnemyVisitor implements Visitor {
+public class EnemyVisitor extends Visitor {
 
     float d;
     public EnemyVisitor(float dmg){
         d = dmg;
     }
 
-    @Override
-    public void visitEnemy(EnemyCollider e) {
 
-    }
 
     @Override
     public void visitPlayerBullet(PlayerBulletCollider b) {
@@ -24,10 +21,7 @@ public class EnemyVisitor implements Visitor {
 
     }
 
-    @Override
-    public void visitEnemyBullet(EnemyBulletCollider b) {
 
-    }
 
     @Override
     public void visitPlayer(PlayerCollider p) {
@@ -35,20 +29,7 @@ public class EnemyVisitor implements Visitor {
 
     }
 
-    @Override
-    public void visitEnemyBarricade(EnemyBarricadeCollider b) {
 
-    }
-
-    @Override
-    public void visitBarricade(BarricadeCollider b) {
-
-    }
-
-    @Override
-    public void visitPowerUp(PowerUpCollider b) {
-
-    }
 
     @Override
     public void visitKamikazeShield(KamikazeShieldCollider b) {

@@ -28,10 +28,12 @@ public class ScoreManager implements IUpdateable
     public void modificarScore(int n){
         score.setContador(score.getContador() + n);
         score.getJLabel().setText("Score :"+ score.getContador());
+        Window.GetWindow().update();
     }
     public void modificarVida(int n){
         vidaJugador.setContador(n);
         vidaJugador.getJLabel().setText(("Vida :"+vidaJugador.getContador()));
+        Window.GetWindow().update();
     }
 
     public JLabel getScore(){
