@@ -6,7 +6,9 @@ import Collisions.DummyCollider;
 import Collisions.Visitor;
 import Controllers.*;
 import GameObjects.*;
+import PowerUps.AbstractPU;
 import PowerUps.AbstractPowerUpFactory;
+import PowerUps.PowerUpFactory;
 
 import java.util.*;
 
@@ -36,6 +38,7 @@ public class Formation extends Enemy {
        distY = 100;
        Map.getInstance().add(this);
        contToPositionMap = new HashMap<EnemyMovementController, OffsetPosition>();
+       puf = new PowerUpFactory(1);
 
 
    }
