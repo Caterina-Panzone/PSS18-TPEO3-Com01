@@ -42,4 +42,8 @@ public abstract class EnemyMovementController<E extends Enemy> extends MovementC
         Map.getInstance().getFormation().removeCont(this);
         super.destroyMe(map);
     }
+
+    public abstract void activate();
+
+    public abstract void setBehaviour(Behaviour be);
 }

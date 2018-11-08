@@ -17,17 +17,7 @@ public class FollowBehaviour extends Behaviour {
 
 
 
-    private void updateDir(){
 
-
-        float x = m.getX();
-
-
-        float y =  m.getY();
-
-        Vector2 vec = new Vector2(x,y);
-        direc = vec;//.norma();
-    }
 
 
 }

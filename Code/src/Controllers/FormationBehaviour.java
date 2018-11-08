@@ -10,7 +10,7 @@ public class FormationBehaviour extends Behaviour {
 
     public FormationBehaviour(){
         direc = Vector2.LEFT();
-        m = new Lemniscata();//Sinusoidal();
+        m = new Sinusoidal();
     }
 
     public Vector2 getDir(){
@@ -19,7 +19,7 @@ public class FormationBehaviour extends Behaviour {
     }
 
 
-    private void updateDir(){
+    protected void updateDir(){
         float x = m.getX();
 
 

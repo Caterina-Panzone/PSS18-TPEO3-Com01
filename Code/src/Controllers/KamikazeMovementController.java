@@ -12,6 +12,14 @@ public class KamikazeMovementController<E extends KamikazeEnemy> extends EnemyMo
     public KamikazeMovementController(GameObject pos) {
         super();
         controlled = (E) new KamikazeEnemy();
-        b = new FollowBehaviour(controlled, pos);
+        b = new FollowBehaviour(controlled,pos);
+    }
+
+    public void activate(){
+        setBehaviour(new DizzyBehaviour());
+    }
+
+    public void setBehaviour(Behaviour be){
+        b = be;
     }
 }

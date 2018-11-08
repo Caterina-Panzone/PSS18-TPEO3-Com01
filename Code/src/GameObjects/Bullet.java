@@ -5,7 +5,7 @@ import Map.Map;
 
 import javax.swing.*;
 
-public abstract class Bullet extends MovingObject {
+public abstract class Bullet extends Ship {
 	protected float daño;
 	
 	public float getDaño(){return daño;}

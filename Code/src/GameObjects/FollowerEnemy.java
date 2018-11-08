@@ -4,10 +4,10 @@ import Assets.SpriteDepot;
 import Collisions.EnemyCollider;
 import Map.Map;
 
-public abstract class KamicazeEnemy extends Enemy {
+public class FollowerEnemy extends Enemy {
 
 
-    public KamicazeEnemy(int d){
+    public FollowerEnemy(){
 
         health = 200;
         speed = 0.1f;
@@ -17,7 +17,7 @@ public abstract class KamicazeEnemy extends Enemy {
         sprite = SpriteDepot.ENEMY1;
         c = new EnemyCollider(this, kamikazeDamage);
         score = 150;
-        lvl = d;
+        lvl = Map.getInstance().getLevel();
         Map.getInstance().add(this);
     }
 

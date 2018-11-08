@@ -17,7 +17,7 @@ public class EnemyBehaviour extends Behaviour {
     }
 
 
-    private void updateDir(){
+    protected void updateDir(){
         float x = m.getX();
                 //(float) ((Math.cos(t) * ampx * Math.sqrt(2))/((Math.sin(t) * Math.sin(t)) + 1)) ;
 

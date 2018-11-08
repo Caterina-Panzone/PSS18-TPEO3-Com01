@@ -12,4 +12,14 @@ public class HybridMovementController<E extends EnemyFighterHybrid> extends Enem
         controlled = (E) new EnemyFighterHybrid();
         b = new FollowBehaviour(controlled, Map.getInstance().getFormation());
     }
+
+    @Override
+    public void setBehaviour(Behaviour be) {
+
+    }
+
+    @Override
+    public void activate() {
+
+    }
 }

@@ -34,11 +34,11 @@ public class Menu {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.setLayout(null);
-        frame.setBounds(0,0, Configs.getConfigs().getCanvasWidth(),Configs.getConfigs().getCanvasHeight());
+        //frame.setBounds(0,0, Configs.getConfigs().getCanvasWidth(),Configs.getConfigs().getCanvasHeight());
         c.setLayout(null);
-        frame.setLocationRelativeTo(null);
+        //frame.setLocationRelativeTo(null);
 
-        frame.setVisible(true);
+
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getRootPane().setSize(Configs.getConfigs().getWindowsSize());
@@ -46,6 +46,8 @@ public class Menu {
 
         frame.setSize(Configs.getConfigs().getWindowsSize());
         frame.setResizable(false);
+        frame.setUndecorated(true);
+        frame.pack();
 
 
 
@@ -55,6 +57,7 @@ public class Menu {
         bInicio.setBounds(300,300,264,149);
         frame.getContentPane().add(bInicio);
         bInicio.addActionListener(new oyenteInicio());
+        frame.setVisible(true);
         frame.repaint();
     }
 

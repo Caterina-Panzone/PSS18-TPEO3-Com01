@@ -24,4 +24,9 @@ public class EnemyFighterBullet extends EnemyBullet {
     public float getDaño() {
         return daño;
     }
+
+    public void update(Map map){
+        super.update(map);
+        updatePosition(map);
+    }
 }

@@ -14,6 +14,13 @@ public class FighterMovementController<E extends EnemyFighterOnlyShoot> extends 
         b = new FollowBehaviour(controlled, pos);
     }
 
+    @Override
+    public void setBehaviour(Behaviour be) {
 
+    }
 
+    @Override
+    public void activate() {
+
+    }
 }
