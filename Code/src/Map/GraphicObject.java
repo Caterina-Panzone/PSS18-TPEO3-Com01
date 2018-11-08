@@ -2,11 +2,11 @@ package Map;
 
 import javax.swing.*;
 
-import GUI.Iwachinable;
+import GUI.IUpdateable;
 import GUI.Window;
 import GameObjects.DestroyableObject;
 
-public class GraphicObject implements Iwachinable {
+public class GraphicObject implements IUpdateable {
 	protected DestroyableObject object;
 	protected JLabel model;
 	

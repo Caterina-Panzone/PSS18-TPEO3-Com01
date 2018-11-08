@@ -16,7 +16,6 @@ public class Formation extends Enemy {
     protected AbstractPowerUpFactory puf;
     protected int lvl;
     protected java.util.Map<EnemyMovementController, OffsetPosition> contToPositionMap;
-    protected List<AbstractControllerFactory> factories;
     Vector2 offset;
     int distX, distY;
 
@@ -35,7 +34,6 @@ public class Formation extends Enemy {
        offset = new Vector2(-20, 0);
        distX = 180;
        distY = 100;
-       createFactories();
        Map.getInstance().add(this);
        contToPositionMap = new HashMap<EnemyMovementController, OffsetPosition>();
 
@@ -50,7 +48,7 @@ public class Formation extends Enemy {
         int x = 0;
         EnemyMovementController c;
         OffsetPosition p;
-        AbstractControllerFactory f = factories.get(x);
+        AbstractControllerFactory f = addEnemies();
         for (int i = 0; i < 3;i++){
             for(int j = 0;j<5;j++){
                 offset = new Vector2(j*distX, i*distY);
@@ -58,7 +56,7 @@ public class Formation extends Enemy {
                 c = f.createController(p);
                 enemies.add(c);
                 contToPositionMap.put(c, p);
-                f = factories.get(x);
+                f = addEnemies();
                 x++;
 
             }
@@ -115,36 +113,6 @@ public class Formation extends Enemy {
 
     }
 
-
-    private void createFactories() {
-        factories = new LinkedList<AbstractControllerFactory>();
-        //Hace una funcion a la que le pases una lista de abstractcontrollerfactory y te retorne un elemento random
-
-        for(int i = 0; i<15; i++){
-            factories.add(addEnemies());
-        }
-        /*factories.add(new KamikazeControllerFactory());
-        factories.add(new KamikazeControllerFactory());
-        factories.add(new KamikazeControllerFactory());
-        factories.add(new KamikazeControllerFactory());
-        factories.add(new KamikazeControllerFactory());
-
-        factories.add(new FollowerControllerFactory());
-
-        factories.add(new FighterControllerFactory());
-        factories.add(new FighterControllerFactory());
-        factories.add(new FighterControllerFactory());
-        factories.add(new FighterControllerFactory());
-
-        factories.add(new HybridControllerFactory());
-        factories.add(new HybridControllerFactory());
-        factories.add(new HybridControllerFactory());
-        factories.add(new HybridControllerFactory());
-        factories.add(new HybridControllerFactory());*/
-
-
-        //TODO:Revisar porque falla con 15 elementos
-    }
 
     public void removeCont(EnemyMovementController e) {
        enemies.remove(e);

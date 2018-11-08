@@ -1,6 +1,6 @@
 package Controllers;
 
-import GUI.Iwachinable;
+import GUI.IUpdateable;
 
-public interface IController extends Iwachinable {
+public interface IController extends IUpdateable {
 }

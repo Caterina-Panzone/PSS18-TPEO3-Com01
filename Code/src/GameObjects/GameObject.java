@@ -1,9 +1,9 @@
 package GameObjects;
 
 import Assets.Configs;
-import GUI.Iwachinable;
+import GUI.IUpdateable;
 
-public abstract class LittlePonny implements Iwachinable {
+public abstract class GameObject implements IUpdateable {
 	protected Vector2 ubication;
 	protected int fieldMarginY = (Configs.getConfigs().getFieldHeigth() - Configs.getConfigs().getCanvasHeight())/2 ;
 	protected int fieldMarginX = (Configs.getConfigs().getFieldWidth() - Configs.getConfigs().getCanvasWidth())/2;

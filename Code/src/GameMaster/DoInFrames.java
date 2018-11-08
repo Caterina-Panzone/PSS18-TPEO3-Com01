@@ -1,11 +1,11 @@
 package GameMaster;
 
-import GUI.Iwachinable;
+import GUI.IUpdateable;
 import Map.Map;
 
 import java.util.concurrent.Callable;
 
-public class DoInFrames implements Iwachinable
+public class DoInFrames implements IUpdateable
 {
     private Callable<Boolean> Condition;
     private Runnable Action;

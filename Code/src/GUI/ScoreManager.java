@@ -5,7 +5,7 @@ import Map.Map;
 
 import javax.swing.*;
 
-public class ScoreManager implements Iwachinable
+public class ScoreManager implements IUpdateable
 {
     private Etiqueta score;
     private Etiqueta vidaJugador;

@@ -2,8 +2,7 @@ package Map;
 
 import Controllers.EnemyMovementController;
 import Controllers.HybridFollowerMovementController;
-import Controllers.KamikazeMovementController;
-import GameObjects.LittlePonny;
+import GameObjects.GameObject;
 
 public class HybridFollowerControllerFactory extends AbstractControllerFactory{
 
@@ -11,7 +10,7 @@ public class HybridFollowerControllerFactory extends AbstractControllerFactory{
     }
 
     @Override
-    public EnemyMovementController createController(LittlePonny pos) {
+    public EnemyMovementController createController(GameObject pos) {
         return new HybridFollowerMovementController(pos);
     }
 }

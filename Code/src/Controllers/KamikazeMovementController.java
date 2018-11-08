@@ -1,11 +1,11 @@
 package Controllers;
 
-import GameObjects.LittlePonny;
+import GameObjects.GameObject;
 import GameObjects.KamikazeEnemy;
 
 public class KamikazeMovementController<E extends KamikazeEnemy> extends EnemyMovementController<E> {
 
-    public KamikazeMovementController(LittlePonny pos) {
+    public KamikazeMovementController(GameObject pos) {
         super();
         controlled = (E) new KamikazeEnemy();
         b = new FollowBehaviour(controlled,pos);

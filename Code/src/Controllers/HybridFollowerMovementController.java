@@ -1,6 +1,6 @@
 package Controllers;
 
-import GameObjects.LittlePonny;
+import GameObjects.GameObject;
 import GameObjects.HybridFollowerEnemy;
 import GameObjects.Player;
 import Map.Map;
@@ -9,7 +9,7 @@ public class HybridFollowerMovementController<E extends HybridFollowerEnemy> ext
 
     private int health;
 
-    public HybridFollowerMovementController(LittlePonny pos) {
+    public HybridFollowerMovementController(GameObject pos) {
         super();
         controlled = (E) new HybridFollowerEnemy();
         health = controlled.getHealth();

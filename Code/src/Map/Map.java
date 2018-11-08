@@ -9,17 +9,17 @@ import java.util.concurrent.LinkedBlockingQueue;
 import javax.swing.JLabel;
 
 import Controllers.IController;
-import GUI.Iwachinable;
+import GUI.IUpdateable;
 import GUI.Window;
 import GameObjects.*;
 
 public final class Map extends SuperMap{
 
-	private HashMap<LittlePonny, GraphicObject> gameobject_to_graphicobject;
-	Collection<Iwachinable> list;
+	private HashMap<GameObject, GraphicObject> gameobject_to_graphicobject;
+	Collection<IUpdateable> list;
 
-	private	Queue<Iwachinable> toDestroy;
-	private Queue<Iwachinable> toAdd;
+	private	Queue<IUpdateable> toDestroy;
+	private Queue<IUpdateable> toAdd;
 	private Window wind;
 	private Formation form;
 	private int lvl;
@@ -61,7 +61,7 @@ public final class Map extends SuperMap{
 
 
 
-	public void add(LittlePonny o){
+	public void add(GameObject o){
 		toAdd.add(o);
 	}
 
@@ -73,7 +73,7 @@ public final class Map extends SuperMap{
 		gameobject_to_graphicobject.put(o,ret);
 	}
 
-	public void add(Iwachinable u){
+	public void add(IUpdateable u){
 		toAdd.add(u);
 	}
 
@@ -88,7 +88,7 @@ public final class Map extends SuperMap{
 			list.add(toAdd.remove());
 		}
 
-		for (Iwachinable o : list) {
+		for (IUpdateable o : list) {
 			o.update(this);
 		}
 
@@ -97,14 +97,14 @@ public final class Map extends SuperMap{
 
 
 
-	public void remove(Iwachinable upda)
+	public void remove(IUpdateable upda)
 	{
 		toDestroy.add(upda);
 	}
 
 
 
-	public void destroy(LittlePonny gam)
+	public void destroy(GameObject gam)
 	{
 		GraphicObject go = gameobject_to_graphicobject.getOrDefault(gam,null);
 		remove(go);

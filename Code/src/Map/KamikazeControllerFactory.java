@@ -2,14 +2,14 @@ package Map;
 
 import Controllers.EnemyMovementController;
 import Controllers.KamikazeMovementController;
-import GameObjects.LittlePonny;
+import GameObjects.GameObject;
 
 public class KamikazeControllerFactory extends AbstractControllerFactory {
     public KamikazeControllerFactory() {
     }
 
     @Override
-    public EnemyMovementController createController(LittlePonny pos) {
+    public EnemyMovementController createController(GameObject pos) {
         return new KamikazeMovementController(pos);
     }
 }

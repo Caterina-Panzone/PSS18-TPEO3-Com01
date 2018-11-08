@@ -2,14 +2,14 @@ package Map;
 
 import Controllers.EnemyMovementController;
 import Controllers.FighterMovementController;
-import GameObjects.LittlePonny;
+import GameObjects.GameObject;
 
 public class FighterControllerFactory extends AbstractControllerFactory {
 
     public FighterControllerFactory(){}
 
     @Override
-    public EnemyMovementController createController(LittlePonny pos) {
+    public EnemyMovementController createController(GameObject pos) {
         return new FighterMovementController(pos);
     }
 }
