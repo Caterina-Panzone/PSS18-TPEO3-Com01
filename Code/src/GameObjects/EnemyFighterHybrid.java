@@ -32,7 +32,7 @@ public class EnemyFighterHybrid extends EnemyFighter{
 
     public void update(Map map) {
         if (isAlive()) {
-            if(health>(enemyHealth/2)) {
+            if(health>(enemyHealth*0.2)) {
                 checkFire(map);
             }
 

@@ -28,4 +28,8 @@ public abstract class IMovementController implements IController {
     public void destroyMe(Map map) {
         map.destroy(this);
     }
+
+    public void setBehaviour(Behaviour be){
+        b = be;
+    }
 }

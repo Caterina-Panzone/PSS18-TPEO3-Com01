@@ -2,10 +2,10 @@ package GameObjects;
 
 import Assets.SpriteDepot;
 import Collisions.EnemyCollider;
-import Controllers.*;
 import Map.Map;
 
-public class KamicazeEnemy extends Enemy {
+public abstract class KamicazeEnemy extends Enemy {
+
 
     public KamicazeEnemy(int d){
 
@@ -23,7 +23,6 @@ public class KamicazeEnemy extends Enemy {
 
     public void update(Map map) {
         if (isAlive()) {
-
             updatePosition(map);
             super.update(map);
         } else {
