@@ -13,7 +13,7 @@ public class HybridFollowerEnemy extends Enemy {
         ubication = posInicial;
         dir = Vector2.ORIGIN();
         kamikazeDamage = 150;
-        sprite = SpriteDepot.ENEMY1;
+        sprite = SpriteDepot.KAMIKAZEHYBRID;
         c = new EnemyCollider(this, kamikazeDamage);
         score = 150;
         lvl = Map.getInstance().getLevel();

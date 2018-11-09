@@ -18,7 +18,7 @@ public class EnemyFighterHybrid extends EnemyFighter{
         dir = Vector2.ORIGIN();
         damage = 0;
         kamikazeDamage = 80;
-        sprite = SpriteDepot.ENEMY1;
+        sprite = SpriteDepot.SHOOTERHYBRID;
         attackSpeed = fighterAttackSpeed;
         loaded = true;
         gunPosition = -7;

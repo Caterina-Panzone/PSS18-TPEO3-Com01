@@ -10,6 +10,6 @@ public class HybridControllerFactory extends AbstractControllerFactory {
 
     @Override
     public EnemyMovementController createController(GameObject pos) {
-        return new HybridMovementEnemyMovementController();
+        return new HybridMovementEnemyMovementController(pos);
     }
 }

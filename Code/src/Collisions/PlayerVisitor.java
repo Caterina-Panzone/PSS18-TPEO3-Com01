@@ -40,7 +40,7 @@ public class PlayerVisitor extends Visitor {
     public void visitPowerUp(PowerUpCollider b) {
         System.out.println("activo");
         b.trigger();
-        b.getO().destroySelf(); //destroy it
+        b.getO().destroySelf();
     }
 
     @Override

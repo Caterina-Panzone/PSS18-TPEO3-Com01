@@ -6,61 +6,63 @@ import Collisions.DummyCollider;
 import Collisions.Visitor;
 import Controllers.*;
 import GameObjects.*;
-import PowerUps.AbstractPowerUpFactory;
-import PowerUps.PowerUpFactory;
+
 
 import java.util.*;
 
 public class Formation extends Enemy {
 
-    protected LinkedList<EnemyMovementController> enemies;
-    protected AbstractPowerUpFactory puf;
+    protected List<EnemyMovementController> enemies;
     protected int lvl;
     protected java.util.Map<EnemyMovementController, OffsetPosition> contToPositionMap;
+    protected List<AbstractControllerFactory> factories;
     Vector2 offset;
     int distX, distY;
+    boolean initialized;
 
     private int cont = 0; //Contador para que los enemigos no se activen en el primer update
 
-   public Formation(int d){
+   public Formation(int d) {
        health = 1;
        speed = 0.19f;
-       ubication = new Vector2(300, 100);
+       ubication = new Vector2(00, 00);
        dir = Vector2.ORIGIN();
        new FormationMovementEnemyMovementController(this);
        enemies = new LinkedList<>();
        lvl = d;
        sprite = SpriteDepot.FROZE;
        c = new DummyCollider(this);
-       offset = new Vector2(-20, 0);
-       distX = 180;
+       offset = new Vector2(0, 0);
+       distX = 200;
        distY = 100;
-       Map.getInstance().add(this);
+       initialized = false;
        contToPositionMap = new HashMap<EnemyMovementController, OffsetPosition>();
-       //puf = new PowerUpFactory(1);
-
-
+       createFactories();
+       Map.getInstance().add(this);
    }
 
 
 
-    public void createEnemies() {
+    public void createEnemies(){
         int x = 0;
         EnemyMovementController c;
         OffsetPosition p;
-        AbstractControllerFactory f = addEnemies();
+        AbstractControllerFactory f = factories.get(x);
         for (int i = 0; i < 3;i++){
             for(int j = 0;j<5;j++){
                 offset = new Vector2(j*distX, i*distY);
+                //System.out.println(offset.getX() +" "+ offset.getY() + "Vector"+i+" "+j);
                 p = new OffsetPosition(this, offset);
+
                 c = f.createController(p);
                 enemies.add(c);
                 contToPositionMap.put(c, p);
-                f = addEnemies();
+                f = factories.get(x);
                 x++;
 
             }
         }
+        initialized = true;
     }
 
 
@@ -74,20 +76,20 @@ public class Formation extends Enemy {
 
    public void update(Map map){
 
-
-       if(enemies.size() != 0) {
-           cont ++;
-           Random rand = new Random();
-           float aux = rand.nextFloat(); //CADA CIERTO TIEMPO MANDA A ACTIVAR UN CONTROLADOR
-           int aux2 = rand.nextInt(enemies.size());
-           if (aux<0.01 && cont > 250){
-               enemies.get(aux2).activate();
-           }
-           updatePosition(map);
-           super.update(map);
+       if(initialized) {
+           if (enemies.size() != 0) {
+               cont++;
+               Random rand = new Random();
+               float aux = rand.nextFloat(); //CADA CIERTO TIEMPO MANDA A ACTIVAR UN CONTROLADOR
+               int aux2 = rand.nextInt(enemies.size());
+               if (aux < 0.01 && cont > 250) {
+                   enemies.get(aux2).activate();
+               }
+               updatePosition(map);
+               super.update(map);
+           } else
+               destroySelf();
        }
-       else
-            destroySelf();
    }
 
     @Override
@@ -114,11 +116,33 @@ public class Formation extends Enemy {
     }
 
 
+    private void createFactories(){
+        factories = new LinkedList<AbstractControllerFactory>();
+        factories.add(new KamikazeControllerFactory());
+        factories.add(new KamikazeControllerFactory());
+        factories.add(new KamikazeControllerFactory());
+        factories.add(new KamikazeControllerFactory());
+        factories.add(new KamikazeControllerFactory());
+        factories.add(new FighterControllerFactory());
+        factories.add(new FighterControllerFactory());
+        factories.add(new FighterControllerFactory());
+        factories.add(new FighterControllerFactory());
+        factories.add(new FighterControllerFactory());
+        factories.add(new HybridControllerFactory());
+        factories.add(new HybridControllerFactory());
+        factories.add(new HybridControllerFactory());
+        factories.add(new HybridControllerFactory());
+        factories.add(new HybridControllerFactory());
+    }
+
     public void removeCont(EnemyMovementController e) {
        enemies.remove(e);
     }
 
     public void destroySelf() {
+
+
+       System.out.println("termino el nivel");
         Map.getInstance().remove(this);
         Map.getInstance().newLevel();
     }

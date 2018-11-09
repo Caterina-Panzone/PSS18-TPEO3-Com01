@@ -20,7 +20,6 @@ public abstract class Enemy extends Ship {
 
     public void damage(float d){
         health -= d;
-        System.out.println(health);
     }
 
 

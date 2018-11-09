@@ -121,6 +121,7 @@ public final class Map{
 	}
 
 	public void newLevel(){
+		System.out.println("nuevo nivel");
 		form = new Formation(++lvl);
 		form.createEnemies();
 	}

@@ -14,7 +14,7 @@ public class KamikazeEnemy extends Enemy {
         ubication = posInicial;
         dir = Vector2.ORIGIN();
         kamikazeDamage = 150;
-        sprite = SpriteDepot.ENEMY1;
+        sprite = SpriteDepot.KAMIKAZE1;
         c = new EnemyCollider(this, kamikazeDamage);
         score = 150;
         Map.getInstance().add(this);

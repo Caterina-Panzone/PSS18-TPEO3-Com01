@@ -44,9 +44,7 @@ public class EnemyFighterOnlyShoot extends EnemyFighter {
 
 
 
-    public float getKamikazeDamage() {
-        return kamikazeDamage;
-    }
+
 
 
 }

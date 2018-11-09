@@ -1,5 +1,7 @@
 package PowerUps;
 
+import GameObjects.Vector2;
+
 @Deprecated
 public class PowerUpFactory extends AbstractPowerUpFactory{
 
@@ -8,23 +10,27 @@ public class PowerUpFactory extends AbstractPowerUpFactory{
         lvl = l;
     }
 
-    @Override
+
     AbstractPU newFroze() {
         return new FrozePU(null);
     }
 
-    @Override
+
     AbstractPU newShield() {
         return new ShieldPU(null);
     }
 
-    @Override
+
     AbstractPU newKamikazeShield() {
         return new KamikazeShieldPU(null);
     }
 
-    @Override
     AbstractPU newPiercing() {
         return new PierceBulletPU(null);
+    }
+
+    @Override
+    public AbstractPU newPowerUp(Vector2 pos) {
+        return null;
     }
 }

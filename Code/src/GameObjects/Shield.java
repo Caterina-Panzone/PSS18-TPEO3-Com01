@@ -27,7 +27,6 @@ public class Shield {
                 d = m.modify(d);
             }
         }
-        System.out.println(d);
         return d;
 
     }

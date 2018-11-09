@@ -1,17 +1,18 @@
 package Controllers;
 
 import GameObjects.EnemyFighterHybrid;
+import GameObjects.GameObject;
 import Map.Map;
 
 public class HybridMovementEnemyMovementController<E extends EnemyFighterHybrid> extends EnemyMovementController<E> {
 
     private int health;
 
-    public HybridMovementEnemyMovementController() {
+    public HybridMovementEnemyMovementController(GameObject pos) {
         super();
         controlled = (E) new EnemyFighterHybrid();
         health = controlled.getHealth();
-        b = new FollowBehaviour(controlled, Map.getInstance().getFormation());
+        b = new FollowBehaviour(controlled, pos);
     }
 
     @Override
