@@ -11,7 +11,7 @@ public class FollowerEnemy extends Enemy {
 
         health = 200;
         speed = 0.1f;
-        ubication = posInicial;
+        ubication = new Vector2(200,200);
         dir = Vector2.ORIGIN();
         kamikazeDamage = 150;
         sprite = SpriteDepot.ENEMY1;

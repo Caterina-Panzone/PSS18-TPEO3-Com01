@@ -9,13 +9,11 @@ import Assets.Configs;
 import Assets.Paths;
 import GameObjects.Vector2;
 import GameObjects.Vector2Int;
-import Map.Map;
 
 public class Window {
 
     private static Window instance;
 
-    private JFrame frame;
     private Container gameContainer;
     private Container UIcontainer;
 

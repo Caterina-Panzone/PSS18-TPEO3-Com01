@@ -4,7 +4,6 @@ package GameMaster;
 import Assets.Configs;
 import Controllers.*;
 import GUI.MyListener;
-import GUI.ScoreManager;
 import GUI.Window;
 import GameObjects.*;
 import Map.Map;
@@ -20,9 +19,8 @@ public class Level extends Thread{
 	public Level() {
 
 		MyListener l = MyListener.getInstance();
-
-		map = Map.newInstance(Window.GetWindow());
 		Window.GetWindow().addListener(l);
+		map = Map.newInstance(Window.GetWindow());
 		map.add(Player.getInstance());
 		new PlayerFireController();
 		PlayerMovementController c = new PlayerMovementController(Player.getInstance());
