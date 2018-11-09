@@ -46,8 +46,6 @@ public class Menu {
 
         frame.setSize(Configs.getConfigs().getWindowsSize());
         frame.setResizable(false);
-        frame.setUndecorated(true);
-        frame.pack();
 
 
 

@@ -7,7 +7,7 @@ import Map.Map;
 
 public class HybridFollowerMovementEnemyMovementController<E extends HybridFollowerEnemy> extends EnemyMovementController<E> {
 
-    private int health;
+    private float health;
 
     public HybridFollowerMovementEnemyMovementController(GameObject pos) {
         super();

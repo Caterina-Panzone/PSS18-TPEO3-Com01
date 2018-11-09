@@ -6,7 +6,7 @@ import Map.Map;
 
 public class HybridMovementEnemyMovementController<E extends EnemyFighterHybrid> extends EnemyMovementController<E> {
 
-    private int health;
+    private float health;
 
     public HybridMovementEnemyMovementController(GameObject pos) {
         super();

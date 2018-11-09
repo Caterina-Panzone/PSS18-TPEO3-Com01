@@ -5,7 +5,7 @@ import Collisions.Collider;
 import javax.swing.*;
 
 public abstract class DestroyableObject extends GameObject {
-	protected int health;
+	protected float health;
 	protected Collider c;
 	protected Icon sprite;
 
@@ -14,7 +14,7 @@ public abstract class DestroyableObject extends GameObject {
 		return sprite;
 	}
 	
-	public int getHealth() {
+	public float getHealth() {
 		return health;
 	}
 

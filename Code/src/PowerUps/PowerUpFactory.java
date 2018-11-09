@@ -1,6 +1,5 @@
 package PowerUps;
 
-import GameObjects.Vector2;
 
 @Deprecated
 public class PowerUpFactory extends AbstractPowerUpFactory{
@@ -29,8 +28,5 @@ public class PowerUpFactory extends AbstractPowerUpFactory{
         return new PierceBulletPU(null);
     }
 
-    @Override
-    public AbstractPU newPowerUp(Vector2 pos) {
-        return null;
-    }
+
 }

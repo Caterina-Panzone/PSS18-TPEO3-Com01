@@ -10,10 +10,11 @@ import javax.swing.JLabel;
 
 import Controllers.IController;
 import GUI.IUpdateable;
+import GUI.ScoreManager;
 import GUI.Window;
 import GameObjects.*;
 
-public final class Map extends SuperMap{
+public final class Map{
 
 	private HashMap<GameObject, GraphicObject> gameobject_to_graphicobject;
 	Collection<IUpdateable> list;
@@ -49,6 +50,7 @@ public final class Map extends SuperMap{
 		wind = w;
 		toDestroy = new LinkedBlockingQueue<>(500);
 		toAdd = new LinkedBlockingQueue<>(500);
+		add(ScoreManager.getInstance());
 
 	}
 

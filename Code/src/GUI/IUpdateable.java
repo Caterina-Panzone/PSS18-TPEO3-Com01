@@ -2,7 +2,6 @@ package GUI;
 
 import Map.GraphicObject;
 import Map.Map;
-import Map.SuperMap;
 
 public interface IUpdateable
 {

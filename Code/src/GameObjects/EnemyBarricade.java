@@ -1,11 +1,8 @@
 package GameObjects;
 
-import Assets.Configs;
 import Assets.SpriteDepot;
 import Collisions.EnemyBarricadeCollider;
 import Map.Map;
-
-import java.util.Random;
 
 public class EnemyBarricade extends Barricade {
 

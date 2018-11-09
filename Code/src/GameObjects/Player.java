@@ -4,7 +4,6 @@ import Assets.Configs;
 import Assets.SpriteDepot;
 import Collisions.Collider;
 import Collisions.PlayerCollider;
-import Controllers.PlayerFireController;
 import GUI.Menu;
 import Map.*;
 
@@ -20,7 +19,7 @@ public class Player extends Ship{
 
 
 	protected static Vector2 initialPosition = new Vector2(218,680);
-	protected int playerAttackSpeed = 500;
+	protected int playerAttackSpeed = 250;
 
 	private static Player instance = null;
 	private Shield shield;
@@ -32,12 +31,12 @@ public class Player extends Ship{
 	}
 
 	private Player() {
-		health = 200;
+		health = 800;
 		speed = playerSpeed;
 		time=0;
 		ubication = initialPosition;
 		dir = Vector2.ORIGIN();
-		damage = 90;
+		damage = 180;
 		sprite = SpriteDepot.NAVE;
 		attackSpeed = playerAttackSpeed;
 		loaded = true;

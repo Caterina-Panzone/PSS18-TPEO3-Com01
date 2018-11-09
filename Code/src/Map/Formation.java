@@ -87,8 +87,10 @@ public class Formation extends Enemy {
                }
                updatePosition(map);
                super.update(map);
-           } else
+           } else {
                destroySelf();
+               initialized = false;
+           }
        }
    }
 

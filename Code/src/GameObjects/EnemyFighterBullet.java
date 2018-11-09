@@ -8,9 +8,9 @@ import javax.swing.*;
 
 public class EnemyFighterBullet extends EnemyBullet {
 
-    protected int daño;
+    protected float daño;
 
-    public EnemyFighterBullet(int d, Vector2 u) {
+    public EnemyFighterBullet(float d, Vector2 u) {
         setUbication(u);
         daño = d;
         dir = new Vector2(0, 1);

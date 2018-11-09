@@ -10,20 +10,21 @@ public class EnemyFighterOnlyShoot extends EnemyFighter {
 
     public EnemyFighterOnlyShoot(){
 
-
-        health = 200;
+        lvl = Map.getInstance().getLevel();
+        health = 200 * (0.5f * lvl);
         speed = 0.1f;
         time=0;
         ubication = posInicial;
         dir = Vector2.ORIGIN();
-        damage = 5;
+        damage = 15 + 5* lvl;
+        kamikazeDamage = 20 + 10* lvl;
         sprite = SpriteDepot.ENEMY1;
         attackSpeed = fighterAttackSpeed;
         loaded = true;
         gunPosition = -7;
         gunPhaseShift = 40; //TODO actualizar valores al sprite nuevo
         c = new EnemyCollider(this, kamikazeDamage);
-        score = 150;
+        score = 150 +25 * lvl;
         new FighterFireController(this);
         Map.getInstance().add(this);
     }

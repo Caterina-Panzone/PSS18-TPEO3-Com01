@@ -4,8 +4,6 @@ import Assets.SpriteDepot;
 import Collisions.PlayerBulletCollider;
 import Map.Map;
 
-import javax.swing.*;
-
 public class BasicPlayerBullet extends PlayerBullet {
 	public BasicPlayerBullet(float d, Vector2 ubication) {
 		setUbication(ubication);

@@ -2,7 +2,6 @@ package GameObjects;
 
 import Assets.SpriteDepot;
 import Collisions.PiercingBulletCollider;
-import Collisions.PlayerBulletCollider;
 import Map.Map;
 
 public class PiercingBullet extends PlayerBullet {

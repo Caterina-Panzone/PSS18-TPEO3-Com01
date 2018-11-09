@@ -1,13 +1,12 @@
 package GUI;
 
-import GameObjects.Player;
 import javax.swing.*;
 import java.awt.*;
 
 public class Etiqueta {
 
     private JLabel label;
-    private int contador;
+    private float contador;
 
     public Etiqueta(){
         contador = 0;
@@ -17,7 +16,7 @@ public class Etiqueta {
         label.setFont(new Font("",Font.PLAIN,20));
     }
 
-    public Etiqueta(int n){
+    public Etiqueta(float n){
         contador = n;
         label = new JLabel();
         label.setText("Vida: "+contador);
@@ -29,11 +28,11 @@ public class Etiqueta {
         return label;
     }
 
-    public int getContador(){
+    public float getContador(){
         return contador;
     }
 
-    public void setContador(int n){
+    public void setContador(float n){
         contador = n;
     }
 

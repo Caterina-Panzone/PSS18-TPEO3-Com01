@@ -4,10 +4,7 @@ import Assets.SpriteDepot;
 import Controllers.FighterFireController;
 import GUI.ScoreManager;
 import Map.Map;
-import PowerUps.AbstractPU;
-import PowerUps.FrozePU;
 import PowerUps.KamikazeShieldPU;
-import PowerUps.PierceBulletPU;
 
 import javax.swing.*;
 
@@ -15,7 +12,7 @@ public abstract class EnemyFighter extends Enemy{
 
 
 
-    protected int damage;
+    protected float damage;
     protected int attackSpeed;
     protected boolean loaded;
     protected long time;

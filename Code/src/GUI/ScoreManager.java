@@ -18,6 +18,7 @@ public class ScoreManager implements IUpdateable
             instance = new ScoreManager();
         return instance;
 
+
     }
 
     private ScoreManager(){
@@ -30,10 +31,10 @@ public class ScoreManager implements IUpdateable
         score.getJLabel().setText("Score :"+ score.getContador());
         Window.GetWindow().update();
     }
-    public void modificarVida(int n){
+    public void modificarVida(float n){
         vidaJugador.setContador(n);
         vidaJugador.getJLabel().setText(("Vida :"+vidaJugador.getContador()));
-        Window.GetWindow().update();
+
     }
 
     public JLabel getScore(){
