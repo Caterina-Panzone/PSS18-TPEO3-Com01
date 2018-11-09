@@ -10,7 +10,7 @@ public class MissilBullet extends PlayerBullet {
         daño = d;
         dir = new Vector2(0, -1);
         speed = 6.3f;
-        sprite = SpriteDepot.LASER;
+        sprite = SpriteDepot.MISSILE;
         health = 1;
         c = new PlayerBulletCollider(this);
         Map.getInstance().add(this);

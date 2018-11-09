@@ -24,10 +24,6 @@ public abstract class Visitor {
 
     }
 
-    public void visitBarricade(BarricadeCollider b) {
-
-    }
-
     public void visitPowerUp(PowerUpCollider b) {
 
     }
@@ -41,4 +37,7 @@ public abstract class Visitor {
     }
 
 
+    public void visitCommonBarricade(CommonBarricadeCollider commonBarricadeCollider){
+
+    }
 }

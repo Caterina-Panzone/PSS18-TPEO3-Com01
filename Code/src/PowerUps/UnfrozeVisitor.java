@@ -1,6 +1,7 @@
 package PowerUps;
 
 import Collisions.*;
+import Controllers.VisitableEnemyController;
 
 public class UnfrozeVisitor extends PowerUpVisitor {
 
@@ -8,8 +9,7 @@ public class UnfrozeVisitor extends PowerUpVisitor {
         super();
     }
 
-    @Override
-    public void visitEnemyController() {
-        super.visitEnemyController();
+    public void visitEnemyController(VisitableEnemyController e) {
+        e.Unfreeze();
     }
 }

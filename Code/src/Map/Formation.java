@@ -3,11 +3,13 @@ package Map;
 import Assets.Configs;
 import Assets.SpriteDepot;
 import Collisions.DummyCollider;
+import Collisions.PowerUpVisitor;
 import Collisions.Visitor;
 import Controllers.*;
 import GameObjects.*;
 
 
+import javax.swing.*;
 import java.util.*;
 
 public class Formation extends Enemy {
@@ -30,7 +32,7 @@ public class Formation extends Enemy {
        new FormationMovementEnemyMovementController(this);
        enemies = new LinkedList<>();
        lvl = d;
-       sprite = SpriteDepot.FROZE;
+       sprite = SpriteDepot.DUMMY;
        c = new DummyCollider(this);
        offset = new Vector2(0, 0);
        distX = 200;
@@ -51,7 +53,6 @@ public class Formation extends Enemy {
         for (int i = 0; i < 3;i++){
             for(int j = 0;j<5;j++){
                 offset = new Vector2(j*distX, i*distY);
-                //System.out.println(offset.getX() +" "+ offset.getY() + "Vector"+i+" "+j);
                 p = new OffsetPosition(this, offset);
 
                 c = f.createController(p);
@@ -68,7 +69,13 @@ public class Formation extends Enemy {
 
     public void affect(Visitor v){
        for(EnemyMovementController c : enemies){
-           c.getEnemy().getCollider().accept(v); ///TODO: cambiar visitables de colisiones por nuevos visitales?
+           c.getEnemy().getCollider().accept(v);
+       }
+   }
+
+   public void affectPowerUp(PowerUpVisitor v){
+       for (EnemyMovementController c : enemies){
+           c.accept(v);
        }
    }
 
@@ -80,14 +87,15 @@ public class Formation extends Enemy {
            if (enemies.size() != 0) {
                cont++;
                Random rand = new Random();
-               float aux = rand.nextFloat(); //CADA CIERTO TIEMPO MANDA A ACTIVAR UN CONTROLADOR
+               float aux = rand.nextFloat();
                int aux2 = rand.nextInt(enemies.size());
-               if (aux < 0.01 && cont > 250) {
+               if (aux < 0.01 && cont > 100) {
                    enemies.get(aux2).activate();
                }
                updatePosition(map);
                super.update(map);
            } else {
+               JOptionPane.showMessageDialog(null,"Mission Acomplished!","You have defeated those aliens!",JOptionPane.INFORMATION_MESSAGE);
                destroySelf();
                initialized = false;
            }

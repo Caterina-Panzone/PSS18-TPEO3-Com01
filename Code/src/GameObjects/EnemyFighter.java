@@ -19,22 +19,12 @@ public abstract class EnemyFighter extends Enemy{
     protected int gunPosition;
     protected static int fighterAttackSpeed = 300;
     protected float gunPhaseShift;
-    protected FighterFireController f;
 
 
 
-    public void destroySelf(){  //TODO: Cada destroy debria nullificar los atributos añadidos en su subclase y llamar a el super
-        ScoreManager.getInstance().modificarScore(score);
-        sprite = SpriteDepot.EXPLOSION;
-        new KamikazeShieldPU(ubication);
-        c.destroySelf();
-        Map.getInstance().destroy(this);
-        sprite = new ImageIcon();
-
+    public void destroySelf(){
+        super.destroySelf();
     }
-
-
-
 
     public void fire() {
 

@@ -31,12 +31,12 @@ public class Player extends Ship{
 	}
 
 	private Player() {
-		health = 800;
+		health = 8000;
 		speed = playerSpeed;
 		time=0;
 		ubication = initialPosition;
 		dir = Vector2.ORIGIN();
-		damage = 180;
+		damage = 18;
 		sprite = SpriteDepot.NAVE;
 		attackSpeed = playerAttackSpeed;
 		loaded = true;
@@ -122,6 +122,10 @@ public class Player extends Ship{
 	public void setWeapon(Weapon w) { //TODO modificar para que copie cualqueir modificador del arma anterior a la nueva arma
 		weapon = w;
 
+	}
+
+	public void setHealth(int i) {
+		health = i;
 	}
 }
 	

@@ -1,39 +1,34 @@
 package PowerUps;
 
 import Assets.SpriteDepot;
-import Collisions.*;
-import Controllers.EnemyBehaviour;
+import Collisions.PowerUpCollider;
 import Controllers.PowerUpBehaviour;
 import Controllers.PowerUpMovementController;
-import Controllers.Sinusoidal;
 import GameMaster.Timer;
-import GameObjects.Player;
-import GameObjects.Vector2;
+import GameObjects.*;
 import Map.Map;
 
-public class KamikazeShieldPU extends AbstractPU {
+public class MissilPU extends AbstractPU {
 
-
-    public KamikazeShieldPU(Vector2 v){
+    public MissilPU(Vector2 dir){
         controller = new PowerUpMovementController(this, new PowerUpBehaviour());
         health = 1;
-        sprite = SpriteDepot.SHIELD;
-        ubication = v;
+        sprite = SpriteDepot.MISSIL2;
+        ubication = dir;
         speed = 1;
         c = new PowerUpCollider(this);
         time = 5000;
-        revert = new KamikazeReverter();
+        revert = new BasicReverter();
         Map.getInstance().add(this);
     }
 
     @Override
     public void trigger() {
-        Collider c = new KamikazeShieldCollider(Player.getInstance());
-        Player.getInstance().setCollider(c);
+        Weapon w = new MissilWeapon();
+        Player.getInstance().setWeapon(w);
 
         Timer t = new Timer(time);
-        new RevertKS(t, revert);
-
+        Revert r = new BasicWeaponRevert(t, revert);
     }
 
     @Override
@@ -48,6 +43,5 @@ public class KamikazeShieldPU extends AbstractPU {
     public void destroySelf() {
         revert.run();
         super.destroySelf();
-
     }
 }

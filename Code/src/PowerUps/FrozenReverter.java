@@ -5,10 +5,10 @@ import Map.Map;
 
 public class FrozenReverter implements Runnable {
 
-    Visitor v;
+    protected Visitor v;
 
     public FrozenReverter(){
-        Visitor v = new UnfrozeVisitor();
+        v = new UnfrozeVisitor();
     }
 
     @Override

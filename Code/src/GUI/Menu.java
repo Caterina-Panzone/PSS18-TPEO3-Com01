@@ -89,7 +89,6 @@ public class Menu {
     public void perder(){
         JOptionPane.showMessageDialog(null,"Mission Failed!","You have been defeated!",JOptionPane.INFORMATION_MESSAGE);
         frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
-      //TODO: poner una imagen de partida perdida. Despues habría que volver al menu
     }
 
 

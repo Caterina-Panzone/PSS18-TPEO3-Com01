@@ -6,6 +6,7 @@ import Controllers.*;
 import Map.Map;
 
 public class EnemyFighterOnlyShoot extends EnemyFighter {
+
     protected static float kamikazeDamage = 80;
 
     public EnemyFighterOnlyShoot(){

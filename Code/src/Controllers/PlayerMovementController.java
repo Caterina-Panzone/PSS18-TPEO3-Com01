@@ -10,10 +10,6 @@ import javax.swing.*;
 
 public class PlayerMovementController extends MovementController {
 
-
-
-
-
 	public PlayerMovementController(Player p) {
 		r = new ImageIcon(Paths.NAVEDER);
 		l = new ImageIcon(Paths.NAVEIZQ);

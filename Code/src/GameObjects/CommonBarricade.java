@@ -1,17 +1,17 @@
 package GameObjects;
 
 import Assets.SpriteDepot;
-import Collisions.EnemyBarricadeCollider;
+import Collisions.CommonBarricadeCollider;
 import Map.Map;
 
-public class EnemyBarricade extends Barricade {
+public class CommonBarricade extends Barricade{
 
-    public EnemyBarricade(int xBarricade, int yBarricade){
+    public CommonBarricade(int xBarricade, int yBarricade){
 
         ubication = new Vector2(xBarricade,yBarricade);
-        health = 700;
+        health = 2000;
         sprite = SpriteDepot.ENEMYBARRICADE;
-        c = new EnemyBarricadeCollider(this);
+        c = new CommonBarricadeCollider(this);
         Map.getInstance().add(this);
     }
 
@@ -34,6 +34,8 @@ public class EnemyBarricade extends Barricade {
         map.destroy(this);
         sprite = null;
     }
+
+
 
 
 }

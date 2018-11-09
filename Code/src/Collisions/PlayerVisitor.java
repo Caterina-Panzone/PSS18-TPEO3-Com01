@@ -23,17 +23,16 @@ public class PlayerVisitor extends Visitor {
     }
 
     @Override
+    public void visitCommonBarricade(CommonBarricadeCollider b) {
+    }
+
+    @Override
     public void visitPlayer(PlayerCollider p) {
 
     }
 
     @Override
     public void visitEnemyBarricade(EnemyBarricadeCollider b) {
-    }
-
-    @Override
-    public void visitBarricade(BarricadeCollider b) {
-
     }
 
     @Override

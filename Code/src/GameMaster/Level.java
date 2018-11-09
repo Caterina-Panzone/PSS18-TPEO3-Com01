@@ -27,8 +27,11 @@ public class Level extends Thread{
 		PlayerMovementController c = new PlayerMovementController(Player.getInstance());
 		Random rand = new Random();
 		int yBarricade = (int) Configs.getConfigs().getCanvasHeight()/2;
-		int xBarricade = rand.nextInt(Configs.getConfigs().getCanvasWidth()-400) + 200;
+		int xBarricade = rand.nextInt(Configs.getConfigs().getCanvasWidth()/2 - 400) + 200;
 		new EnemyBarricade(xBarricade,yBarricade);
+		yBarricade = (int) Configs.getConfigs().getCanvasHeight()/2;
+		xBarricade = rand.nextInt(Configs.getConfigs().getCanvasWidth()/2-400) + Configs.getConfigs().getCanvasWidth()/2;
+		new CommonBarricade(xBarricade,yBarricade);
 		map.newLevel();
 
 
@@ -36,8 +39,6 @@ public class Level extends Thread{
 		seguir = true;
 
 	}
-
-
 
 
 	public void run(){

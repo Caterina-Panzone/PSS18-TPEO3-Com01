@@ -14,22 +14,19 @@ public class PlayerBulletVisitor extends Visitor {
 
     }
 
-
-
     @Override
     public void visitEnemyBarricade(EnemyBarricadeCollider b) {
         b.getO().damage(d);
     }
 
-    @Override
-    public void visitBarricade(BarricadeCollider b) {
-        b.getO().damage(d);
-    }
 
     @Override
     public void visitPowerUp(PowerUpCollider b) {
         b.getO().damage(d);
     }
 
-
+    @Override
+    public void visitCommonBarricade(CommonBarricadeCollider b) {
+        b.getO().damage(d);
+    }
 }

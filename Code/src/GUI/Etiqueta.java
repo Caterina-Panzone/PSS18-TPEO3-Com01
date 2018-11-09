@@ -13,7 +13,7 @@ public class Etiqueta {
         label = new JLabel();
         label.setText("Score: "+contador);
         label.setForeground(Color.white);
-        label.setFont(new Font("",Font.PLAIN,20));
+        label.setFont(new Font("",Font.PLAIN,10));
     }
 
     public Etiqueta(float n){
@@ -21,7 +21,7 @@ public class Etiqueta {
         label = new JLabel();
         label.setText("Vida: "+contador);
         label.setForeground(Color.white);
-        label.setFont(new Font("",Font.PLAIN,20));
+        label.setFont(new Font("",Font.PLAIN,10));
     }
 
     public JLabel getJLabel(){

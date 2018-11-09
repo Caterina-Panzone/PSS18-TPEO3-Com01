@@ -13,10 +13,6 @@ public abstract class EnemyMovementController<E extends Enemy> extends MovementC
         Map.getInstance().add(this);
     }
 
-
-
-
-
     @Override
     public void update(Map map)
     {
@@ -44,7 +40,7 @@ public abstract class EnemyMovementController<E extends Enemy> extends MovementC
     public abstract void setBehaviour(Behaviour be);
 
     public void accept(PowerUpVisitor v){
-        v.visitEnemyController();
+        v.visitEnemyController(this);
     }
 
     public void Freeze() {

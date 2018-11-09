@@ -1,6 +1,7 @@
 package Assets;
 
 import javax.swing.*;
+import java.nio.file.Path;
 
 public class SpriteDepot {
 
@@ -24,4 +25,7 @@ public class SpriteDepot {
     public static Icon KAMIKAZE1 = new ImageIcon(Paths.KAMIKAZE1);
     public static Icon KAMIKAZEHYBRID = new ImageIcon(Paths.KAMIKAZEHYBRID);
     public static Icon SHOOTERHYBRID = new ImageIcon(Paths.SHOOTERHYBRID);
+    public static Icon POTION = new ImageIcon(Paths.POTION);
+    public static Icon MISSILE = new ImageIcon(Paths.MISSILE);
+    public static Icon MISSIL2 = new ImageIcon(Paths.MISSIL2);
 }

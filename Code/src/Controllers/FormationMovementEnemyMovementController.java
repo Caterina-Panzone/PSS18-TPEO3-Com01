@@ -10,9 +10,9 @@ public class FormationMovementEnemyMovementController extends EnemyMovementContr
 
     @Override
     public void setBehaviour(Behaviour be) {
-    } //TODO: no debería estar en esta clase
+    }
 
     @Override
     public void activate() {
-    }//TODO: no debería estar en esta clase
+    }
 }

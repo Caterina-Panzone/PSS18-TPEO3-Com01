@@ -21,14 +21,15 @@ public class EnemyBulletVisitor extends Visitor {
     public void visitEnemyBarricade(EnemyBarricadeCollider b) {
     }
 
-    @Override
-    public void visitBarricade(BarricadeCollider b) {
-
-    }
 
     @Override
     public void visitPowerUp(PowerUpCollider b) {
 
+    }
+
+    @Override
+    public void visitCommonBarricade(CommonBarricadeCollider b) {
+        b.getO().damage(d);
     }
 
     @Override
