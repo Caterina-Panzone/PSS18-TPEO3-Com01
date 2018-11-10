@@ -2,7 +2,7 @@ package Collisions;
 
 public class PlayerBulletVisitor extends Visitor {
 
-    float d;
+   protected float d;
 
     public PlayerBulletVisitor(float d){
         this.d = d;

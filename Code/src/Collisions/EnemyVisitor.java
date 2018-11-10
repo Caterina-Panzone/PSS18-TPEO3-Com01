@@ -4,7 +4,8 @@ import Map.Map;
 
 public class EnemyVisitor extends Visitor {
 
-    float d;
+    protected float d;
+
     public EnemyVisitor(float dmg){
         d = dmg;
     }

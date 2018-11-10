@@ -1,7 +1,7 @@
 package Collisions;
 
 public class EnemyBulletVisitor extends Visitor {
-    float d;
+    protected float d;
 
     public EnemyBulletVisitor(float dmg){
         d = dmg;

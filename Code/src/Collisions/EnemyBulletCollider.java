@@ -8,7 +8,7 @@ import java.util.HashSet;
 
 public class EnemyBulletCollider extends Collider {
 
-    Collection<Collider> collided;
+    protected Collection<Collider> collided;
 
     public EnemyBulletCollider(EnemyBullet o) {
         super(o);
