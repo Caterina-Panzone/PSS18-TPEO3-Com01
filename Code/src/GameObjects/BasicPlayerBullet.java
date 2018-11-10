@@ -5,6 +5,7 @@ import Collisions.PlayerBulletCollider;
 import Map.Map;
 
 public class BasicPlayerBullet extends PlayerBullet {
+
 	public BasicPlayerBullet(float d, Vector2 ubication) {
 		setUbication(ubication);
 		daño = d;

@@ -10,7 +10,7 @@ public class DoInFrames implements IUpdateable
     private Callable<Boolean> Condition;
     private Runnable Action;
     private boolean excecuted;
-    int i;
+    private int i;
     public DoInFrames(int cantFrames, Runnable action)
     {
         i =0;

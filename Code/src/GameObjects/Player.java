@@ -16,8 +16,6 @@ public class Player extends Ship{
 	protected boolean loaded;
 	protected long time;
 	protected Weapon weapon;
-
-
 	protected static Vector2 initialPosition = new Vector2(218,680);
 	protected int playerAttackSpeed = 250;
 

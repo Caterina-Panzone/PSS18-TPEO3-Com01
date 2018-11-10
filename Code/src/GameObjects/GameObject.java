@@ -11,9 +11,6 @@ public abstract class GameObject implements IUpdateable {
 	public Vector2 getUbication() {
 		return ubication;
 	}
-	public Vector2Int getRawUbication() {
-		return Vector2Int.Implicit(ubication);
-	}
 
 	public void setUbication(Vector2 ubication) {
 		this.ubication = ubication;

@@ -4,7 +4,7 @@ import javax.management.ConstructorParameters;
 import java.util.concurrent.Callable;
 
 public class Timer implements Callable {
-    long current, ending;
+    private long current, ending;
 
 
 

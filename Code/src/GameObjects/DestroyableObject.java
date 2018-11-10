@@ -18,7 +18,9 @@ public abstract class DestroyableObject extends GameObject {
 		return health;
 	}
 
-
+	public Collider getCollider(){
+		return c;
+	}
 
 	public boolean isAlive() {
 		return health > 0;
@@ -29,10 +31,6 @@ public abstract class DestroyableObject extends GameObject {
 	public void damage(float d){
 		health -= d;
 
-	}
-
-	public Collider getCollider(){
-		return c;
 	}
 
 	
