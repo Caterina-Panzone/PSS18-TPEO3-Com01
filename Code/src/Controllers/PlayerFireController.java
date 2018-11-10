@@ -1,7 +1,6 @@
 package Controllers;
 
 import GUI.MyListener;
-import GameObjects.EnemyFighter;
 import GameObjects.Player;
 import Map.Map;
 
@@ -12,7 +11,6 @@ public class PlayerFireController implements IController {
         Map.getInstance().add(this);
 
     }
-    EnemyFighter controlled;
 
     public void Fire() {
         Player.getInstance().fire();

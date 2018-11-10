@@ -5,7 +5,7 @@ import Map.Map;
 
 public class FighterFireController extends IFireController{
 
-    EnemyFighter controlled;
+   protected EnemyFighter controlled;
 
 
     public FighterFireController(EnemyFighter f){

@@ -46,13 +46,6 @@ public class PlayerMovementController extends MovementController {
 			destroyMe(map);
 	}
 
-
-
-
-
-
-
-
 	public void destroyMe(Map map) {
 		map.destroy(this);
 	}

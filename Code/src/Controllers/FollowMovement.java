@@ -11,11 +11,11 @@ import static java.lang.Math.min;
 public class FollowMovement extends MovementPattern {
     protected Vector2 o, d;
     protected GameObject so, sd;
-    float distX = Configs.getConfigs().getFieldWidth();
-    float x1;
-    float x2;
-    float y1;
-    float y2;
+    protected float distX = Configs.getConfigs().getFieldWidth();
+    protected float x1;
+    protected float x2;
+    protected float y1;
+    protected float y2;
 
 
     public FollowMovement(GameObject or, GameObject de) {
