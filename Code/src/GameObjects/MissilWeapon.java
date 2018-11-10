@@ -1,6 +1,5 @@
 package GameObjects;
 
-import Map.Map;
 
 public class MissilWeapon extends Weapon {
 

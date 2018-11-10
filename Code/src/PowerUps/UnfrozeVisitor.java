@@ -5,9 +5,7 @@ import Controllers.VisitableEnemyController;
 
 public class UnfrozeVisitor extends PowerUpVisitor {
 
-    public UnfrozeVisitor(){
-        super();
-    }
+    public UnfrozeVisitor(){ }
 
     public void visitEnemyController(VisitableEnemyController e) {
         e.Unfreeze();

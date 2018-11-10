@@ -14,7 +14,6 @@ public abstract class AbstractPU extends MovingObject {
         protected Runnable revert;
         public abstract void trigger();
         protected long time;
-        protected int l;
 
 
 
@@ -40,9 +39,5 @@ public abstract class AbstractPU extends MovingObject {
                 c.destroySelf();
                 sprite = new ImageIcon();
         }
-
-
-
-
 
 }

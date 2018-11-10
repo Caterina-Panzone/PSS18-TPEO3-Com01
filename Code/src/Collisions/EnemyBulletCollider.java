@@ -1,6 +1,6 @@
 package Collisions;
 
-import GameObjects.Bullet;
+
 import GameObjects.EnemyBullet;
 
 import java.util.Collection;

@@ -1,6 +1,6 @@
 package GUI;
 
-import Map.GraphicObject;
+
 import Map.Map;
 
 public interface IUpdateable

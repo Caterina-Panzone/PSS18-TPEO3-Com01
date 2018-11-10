@@ -4,7 +4,6 @@ import Assets.Configs;
 import Assets.SpriteDepot;
 import Collisions.DummyCollider;
 import Collisions.PowerUpVisitor;
-import Collisions.Visitor;
 import Controllers.*;
 import GameObjects.*;
 
@@ -27,7 +26,7 @@ public class Formation extends Enemy {
    public Formation(int d) {
        health = 1;
        speed = 0.19f;
-       ubication = new Vector2(00, 00);
+       ubication = new Vector2(00, 30);
        dir = Vector2.ORIGIN();
        new FormationMovementEnemyMovementController(this);
        enemies = new LinkedList<>();
@@ -66,13 +65,6 @@ public class Formation extends Enemy {
         initialized = true;
     }
 
-
-    public void affect(Visitor v){
-       for(EnemyMovementController c : enemies){
-           c.getEnemy().getCollider().accept(v);
-       }
-   }
-
    public void affectPowerUp(PowerUpVisitor v){
        for (EnemyMovementController c : enemies){
            c.accept(v);
@@ -89,8 +81,10 @@ public class Formation extends Enemy {
                Random rand = new Random();
                float aux = rand.nextFloat();
                int aux2 = rand.nextInt(enemies.size());
-               if (aux < 0.01 && cont > 100) {
-                   enemies.get(aux2).activate();
+               if (aux < 0.01 && cont > 300) {
+                   if (!enemies.get(aux2).isFrozen())
+                        enemies.get(aux2).activate();
+
                }
                updatePosition(map);
                super.update(map);
@@ -133,16 +127,20 @@ public class Formation extends Enemy {
         factories.add(new KamikazeControllerFactory());
         factories.add(new KamikazeControllerFactory());
         factories.add(new KamikazeControllerFactory());
+
         factories.add(new FighterControllerFactory());
         factories.add(new FighterControllerFactory());
         factories.add(new FighterControllerFactory());
-        factories.add(new FighterControllerFactory());
-        factories.add(new FighterControllerFactory());
+
+        factories.add(new FollowerControllerFactory());
+        factories.add(new FollowerControllerFactory());
+
         factories.add(new HybridControllerFactory());
         factories.add(new HybridControllerFactory());
         factories.add(new HybridControllerFactory());
-        factories.add(new HybridControllerFactory());
-        factories.add(new HybridControllerFactory());
+
+        factories.add(new HybridFollowerControllerFactory());
+        factories.add(new HybridFollowerControllerFactory());
     }
 
     public void removeCont(EnemyMovementController e) {
@@ -151,24 +149,7 @@ public class Formation extends Enemy {
 
     public void destroySelf() {
 
-
-       System.out.println("termino el nivel");
         Map.getInstance().remove(this);
         Map.getInstance().newLevel();
-    }
-
-    private AbstractControllerFactory addEnemies(){
-       LinkedList<AbstractControllerFactory> lista = new LinkedList<AbstractControllerFactory>();
-       lista.add(new FighterControllerFactory());
-       lista.add(new FollowerControllerFactory());
-       lista.add(new HybridControllerFactory());
-       lista.add(new HybridFollowerControllerFactory());
-       lista.add(new KamikazeControllerFactory());
-
-       Random rand = new Random();
-       int i = rand.nextInt(lista.size());
-       AbstractControllerFactory toRet  = lista.get(i);
-       return toRet;
-
     }
 }

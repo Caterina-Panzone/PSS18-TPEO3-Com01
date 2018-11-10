@@ -56,11 +56,6 @@ public final class Map{
 
 
 
-	  public void run() {
-		   wind.Show();
-	    }
-
-
 
 
 	public void add(GameObject o){
@@ -121,7 +116,6 @@ public final class Map{
 	}
 
 	public void newLevel(){
-		System.out.println("nuevo nivel");
 		form = new Formation(++lvl);
 		form.createEnemies();
 	}

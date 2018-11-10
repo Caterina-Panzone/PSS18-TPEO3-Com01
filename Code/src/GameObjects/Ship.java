@@ -8,12 +8,6 @@ import javax.swing.*;
 public abstract class Ship extends MovingObject {
 
 
-
-
-
-
-
-
     @Override
     protected void updatePosition(Map map) {
         float x = ubication.getX();

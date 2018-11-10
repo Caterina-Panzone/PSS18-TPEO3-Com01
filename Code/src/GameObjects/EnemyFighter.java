@@ -1,12 +1,5 @@
 package GameObjects;
 
-import Assets.SpriteDepot;
-import Controllers.FighterFireController;
-import GUI.ScoreManager;
-import Map.Map;
-import PowerUps.KamikazeShieldPU;
-
-import javax.swing.*;
 
 public abstract class EnemyFighter extends Enemy{
 
@@ -17,7 +10,7 @@ public abstract class EnemyFighter extends Enemy{
     protected boolean loaded;
     protected long time;
     protected int gunPosition;
-    protected static int fighterAttackSpeed = 300;
+    protected static int fighterAttackSpeed = 800;
     protected float gunPhaseShift;
 
 

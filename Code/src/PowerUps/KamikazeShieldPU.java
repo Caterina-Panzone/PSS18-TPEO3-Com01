@@ -15,10 +15,10 @@ public class KamikazeShieldPU extends AbstractPU {
 
 
     public KamikazeShieldPU(Vector2 v){
+        ubication = v;
         controller = new PowerUpMovementController(this, new PowerUpBehaviour());
         health = 1;
         sprite = SpriteDepot.SHIELD;
-        ubication = v;
         speed = 1;
         c = new PowerUpCollider(this);
         time = 5000;
@@ -46,7 +46,6 @@ public class KamikazeShieldPU extends AbstractPU {
 
     @Override
     public void destroySelf() {
-        revert.run();
         super.destroySelf();
 
     }

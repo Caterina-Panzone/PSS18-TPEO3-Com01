@@ -31,12 +31,12 @@ public class Player extends Ship{
 	}
 
 	private Player() {
-		health = 8000;
+		health = 200;
 		speed = playerSpeed;
 		time=0;
 		ubication = initialPosition;
 		dir = Vector2.ORIGIN();
-		damage = 18;
+		damage = 40;
 		sprite = SpriteDepot.NAVE;
 		attackSpeed = playerAttackSpeed;
 		loaded = true;

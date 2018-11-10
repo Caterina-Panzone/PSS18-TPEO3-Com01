@@ -4,7 +4,6 @@ import GameObjects.GameObject;
 import GameObjects.Vector2;
 public class FollowBehaviour extends Behaviour {
 
-    protected Vector2 u;
 
     public FollowBehaviour(GameObject or, GameObject de){
         m = new FollowMovement(or, de);

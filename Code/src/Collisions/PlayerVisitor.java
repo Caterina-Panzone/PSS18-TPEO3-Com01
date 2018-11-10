@@ -37,7 +37,6 @@ public class PlayerVisitor extends Visitor {
 
     @Override
     public void visitPowerUp(PowerUpCollider b) {
-        System.out.println("activo");
         b.trigger();
         b.getO().destroySelf();
     }

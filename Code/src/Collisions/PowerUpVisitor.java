@@ -4,8 +4,5 @@ import Controllers.VisitableEnemyController;
 
 public class PowerUpVisitor extends Visitor {
 
-    public PowerUpVisitor(){
-    }
-
-    public void visitEnemyController(VisitableEnemyController e){}
+    public void visitEnemyController(VisitableEnemyController e){};
 }

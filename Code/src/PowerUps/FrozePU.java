@@ -31,7 +31,7 @@ public class FrozePU extends AbstractPU {
 
     @Override
     public void trigger() {
-        Map.getInstance().getFormation().affectPowerUp(frozev); //TODO: crear nueva instancia de visitor
+        Map.getInstance().getFormation().affectPowerUp(frozev);
         Timer t = new Timer(2000);
         new RevertFrozen(t, revert);
 
@@ -43,11 +43,12 @@ public class FrozePU extends AbstractPU {
             updatePosition(map);
             super.update(map);
         }
+        else
+            destroySelf();
     }
 
     @Override
     public void destroySelf() {
-        revert.run();
         super.destroySelf();
     }
 }

@@ -13,9 +13,9 @@ public class ShieldPU extends AbstractPU {
     public ShieldPU(Vector2 dir){
         ubication = dir;
         controller = new PowerUpMovementController(this, new PowerUpBehaviour());
-        c = new PowerUpCollider(this);
-        health = 1;
         sprite = SpriteDepot.SHIELD;
+        health = 1;
+        c = new PowerUpCollider(this);
         speed = 1;
         power = 50;
         Map.getInstance().add(this);
@@ -39,7 +39,6 @@ public class ShieldPU extends AbstractPU {
 
     @Override
     public void destroySelf() {
-
         super.destroySelf();
     }
 }

@@ -15,9 +15,6 @@ public class MyListener implements KeyListener {
         return  instance;
     }
 
-    //TODO: a los llamados poneles () y listo, se llaman iguales
-
-    //private final AtomicBoolean a;
 
     private final AtomicBoolean up = new AtomicBoolean(false);
     private final AtomicBoolean down = new AtomicBoolean(false);

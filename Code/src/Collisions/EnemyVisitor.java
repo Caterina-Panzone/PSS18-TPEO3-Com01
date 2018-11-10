@@ -1,8 +1,5 @@
 package Collisions;
 
-import GameObjects.Bullet;
-import GameObjects.Enemy;
-import GameObjects.Player;
 import Map.Map;
 
 public class EnemyVisitor extends Visitor {

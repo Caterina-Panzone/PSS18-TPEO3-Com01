@@ -20,7 +20,7 @@ public abstract class Enemy extends Ship {
         Random rand = new Random();
         float aux = rand.nextFloat();
         int aux2;
-        if (aux<0.3){
+        if (aux<0.35){
             aux2 = rand.nextInt(PowerUpPool.getInstance().getPool().size());
             PowerUpPool.getInstance().getPool().get(aux2).newPowerUp(ubication);
         }

@@ -1,6 +1,6 @@
 package Controllers;
 
-import GameObjects.Enemy;
+
 import GameObjects.MovingObject;
 import GameObjects.Vector2;
 

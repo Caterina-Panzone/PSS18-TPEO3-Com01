@@ -1,7 +1,6 @@
 package GameObjects;
 
 
-import Assets.Configs;
 import Map.Map;
 
 import javax.swing.*;

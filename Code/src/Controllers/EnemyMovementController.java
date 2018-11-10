@@ -25,10 +25,6 @@ public abstract class EnemyMovementController<E extends Enemy> extends MovementC
             destroyMe(map);
     }
 
-    public Enemy getEnemy(){
-        return controlled;
-    }
-
     @Override
     public void destroyMe(Map map) {
         Map.getInstance().getFormation().removeCont(this);
@@ -52,4 +48,7 @@ public abstract class EnemyMovementController<E extends Enemy> extends MovementC
     }
 
 
+    public boolean isFrozen() {
+        return b.isPaused();
+    }
 }

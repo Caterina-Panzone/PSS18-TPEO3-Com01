@@ -1,6 +1,5 @@
 package Collisions;
 
-import GameObjects.*;
 
 public abstract class Visitor {
 

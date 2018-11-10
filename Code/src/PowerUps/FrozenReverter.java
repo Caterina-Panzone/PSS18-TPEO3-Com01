@@ -1,11 +1,12 @@
 package PowerUps;
 
+import Collisions.PowerUpVisitor;
 import Collisions.Visitor;
 import Map.Map;
 
 public class FrozenReverter implements Runnable {
 
-    protected Visitor v;
+    protected PowerUpVisitor v;
 
     public FrozenReverter(){
         v = new UnfrozeVisitor();
@@ -13,6 +14,6 @@ public class FrozenReverter implements Runnable {
 
     @Override
     public void run() {
-        Map.getInstance().getFormation().affect(v);
+        Map.getInstance().getFormation().affectPowerUp(v);
     }
 }

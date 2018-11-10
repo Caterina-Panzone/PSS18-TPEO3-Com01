@@ -12,7 +12,10 @@ public abstract class Behaviour {
 
     protected void updateDir(){
 
-        if(!isPaused) {
+        if(isPaused){
+            direc = new Vector2(0,0);
+        }
+        else{
             float x = m.getX();
 
 
@@ -29,5 +32,9 @@ public abstract class Behaviour {
 
     public void unpause(){
         isPaused = false;
+    }
+
+    public boolean isPaused(){
+        return isPaused;
     }
 }

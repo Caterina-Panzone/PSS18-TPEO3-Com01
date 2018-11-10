@@ -9,12 +9,12 @@ public class PowerUpPool {
 
     private PowerUpPool(){
         pool = new LinkedList<AbstractPowerUpFactory>();
-        //pool.add(new FrozePUFactory());
-        //pool.add(new KamikazeShieldPUFactory());
-       // pool.add(new PotionPUFactory());
-       // pool.add(new PierceBulletPUFactory());
-       // pool.add(new ShieldPUFactory());
-        //pool.add(new MissilPUFactory());
+        pool.add(new FrozePUFactory());
+        pool.add(new KamikazeShieldPUFactory());
+        pool.add(new PotionPUFactory());
+        pool.add(new PierceBulletPUFactory());
+        pool.add(new ShieldPUFactory());
+        pool.add(new MissilPUFactory());
     }
 
     public static PowerUpPool getInstance(){

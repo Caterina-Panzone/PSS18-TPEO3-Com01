@@ -14,16 +14,6 @@ public class GraphicObject implements IUpdateable {
 		object = o;
 		model = l;
 	}
-	
-	public JLabel getLabel(){
-		return model;
-	}
-
-	public DestroyableObject getObject(){
-		return object;
-	}
-	
-
 
 	
 	public void update(Map map) {

@@ -20,10 +20,6 @@ public class PlayerBulletVisitor extends Visitor {
     }
 
 
-    @Override
-    public void visitPowerUp(PowerUpCollider b) {
-        b.getO().damage(d);
-    }
 
     @Override
     public void visitCommonBarricade(CommonBarricadeCollider b) {

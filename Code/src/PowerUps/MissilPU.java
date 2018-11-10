@@ -41,7 +41,6 @@ public class MissilPU extends AbstractPU {
 
     @Override
     public void destroySelf() {
-        revert.run();
         super.destroySelf();
     }
 }

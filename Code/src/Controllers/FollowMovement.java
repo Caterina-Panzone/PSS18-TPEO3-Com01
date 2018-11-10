@@ -12,7 +12,6 @@ public class FollowMovement extends MovementPattern {
     protected Vector2 o, d;
     protected GameObject so, sd;
     float distX = Configs.getConfigs().getFieldWidth();
-    float distY = Configs.getConfigs().getFieldHeigth();
     float x1;
     float x2;
     float y1;

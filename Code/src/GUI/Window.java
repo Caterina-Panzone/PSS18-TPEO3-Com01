@@ -67,11 +67,6 @@ public class Window {
 		return object;
     }
 
-    public void addUI(JLabel l){
-    	UIcontainer.add(l);
-	}
-
-
 
     public void addListener(KeyListener k) { Menu.getInstance().getFrame().addKeyListener(k); }
 

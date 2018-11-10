@@ -1,6 +1,5 @@
 package Collisions;
 
-import PowerUps.KamikazeShieldPU;
 
 public class KamikazeShieldVisitor extends PlayerVisitor {
 
@@ -8,7 +7,7 @@ public class KamikazeShieldVisitor extends PlayerVisitor {
 
     @Override
     public void visitEnemy(EnemyCollider e) {
-        e.getO().damage(10000);//deberiamos llamar a destruir?
+        e.getO().damage(10000);
 
     }
 
