@@ -39,6 +39,11 @@ public class PlayerMovementController extends MovementController {
 
 		Map.getInstance().add(this);
 	}
+	
+	public void setControlled(Player p) {
+		controlled=p;
+		Map.getInstance().add(this);
+	}
 
 	public void update(Map map)
 	{
