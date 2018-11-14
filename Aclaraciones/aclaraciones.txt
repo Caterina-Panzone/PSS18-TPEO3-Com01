@@ -1,9 +1,0 @@
-Aclaraciones:
-
-1) El PiercingShoot afecta sólo a los enemigos.
-2) No hay alcance específico de bala, llegan hasta el final de la pantalla y se destruyen.
-3) No hay Friendly Fire, ni colisionan entre sí los enemigos.
-4) Las barricadas no colisionan con naves.
-5) Los premios se mueven con movimiento vertical pero se puede cambiar en cualquier momento facilmente.
-6) El diagrama de clases UML está hecho por cada paquete para que sea más legible.
-7) La cantidad de niveles es infinita. Una vez finalizado un nivel se notifica al usuario que ha ganado y continúa el siguiente
